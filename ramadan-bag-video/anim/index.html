@@ -115,6 +115,14 @@
   .wa .t { font-family: 'Tajawal'; font-weight: 800; font-size: 44px; }
   .wa .n { direction: ltr; unicode-bidi: isolate; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 52px; }
 
+  .stat { width: 920px; box-sizing: border-box; padding: 44px 40px 34px; border-radius: 56px; text-align: center;
+    background: linear-gradient(165deg, rgba(10,22,44,.80), rgba(4,12,28,.88)); border: 3px solid rgba(240,206,122,.85);
+    box-shadow: 0 40px 100px rgba(0,0,0,.55), inset 0 2px 0 rgba(255,255,255,.18); backdrop-filter: blur(18px); }
+  .stat .big { font-family: 'Lalezar'; font-size: 170px; line-height: 1.05; }
+  .stat .big .n { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+  .stat .lbl { font-weight: 800; font-size: 50px; line-height: 1.3; color: var(--cream); margin-top: 10px; }
+  .stat .sub { font-weight: 800; font-size: 44px; color: #f3d27a; margin-top: 16px; }
+  .stat .src, .srcTag { font-weight: 500; font-size: 28px; color: rgba(255,246,220,.7); margin-top: 22px; }
   #flash { background: #fff; }
   #tint { background: linear-gradient(180deg, rgba(10,25,60,.55), rgba(20,35,70,.35)); }
   #vignette { background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%); }
@@ -170,11 +178,6 @@
   </div>
 
   <!-- S9-S10 -->
-  <div class="abs glass" id="cardHands" style="width:860px;height:1120px"><div class="inner"><img src="assets/hands-tray.jpg"><div class="sheen"></div></div></div>
-  <img class="abs" id="miniBasket" src="assets/basket.png" style="width:380px;height:380px;object-fit:contain">
-  <div class="abs glass" id="cardNafeer" style="width:860px;height:1120px"><div class="inner"><img src="assets/nafeer.jpg"><div class="sheen"></div></div></div>
-  <div class="abs chip" id="chipAhl"><span class="gold">الأهل</span></div>
-  <div class="abs chip" id="chipHub"><span class="gold">الحبان</span></div>
 
   <!-- S11-S16 payment cards -->
   <div class="abs pay" id="payINT">
@@ -217,15 +220,33 @@
   </div>
 
   <!-- captions -->
-  <div class="abs cap" id="cap1"><span class="gold">فاكرين ريحة الحلو مُر؟</span></div>
-  <div class="abs cap" id="cap2"><span class="gold">البروش.. والصواني في الشارع</span></div>
-  <div class="abs cap" id="cap3"><span class="gold">لمّة الأهل</span></div>
-  <div class="abs cap sm" id="cap4"><span class="gold">كتير من أهلنا خلّوا بيوتهم</span></div>
-  <div class="abs cap" id="cap5"><span class="gold">صينيتهم.. ما زي زمان</span></div>
+  <!-- figures -->
+  <div class="abs stat" id="st1"><div class="big gold"><span class="n">33.7</span> مليون</div>
+    <div class="lbl">زول في السودان محتاجين مساعدة إنسانية في 2026</div>
+    <div class="sub" id="st1sub">تقريباً 2 من كل 3 من أهلنا</div>
+    <div class="src">المصدر: الأمم المتحدة (أوتشا)، 2026</div></div>
+  <div class="abs stat" id="st2"><div class="gold" style="font-family:'Lalezar';font-size:104px;line-height:1.2">«أكبر أزمة إنسانية<br>في العالم»</div>
+    <div class="lbl">بحسب الأمم المتحدة</div>
+    <div class="src">المصدر: الأمم المتحدة (أوتشا)، أبريل 2026</div></div>
+  <div class="abs stat" id="st3"><div class="big gold"><span class="n">19.5</span> مليون</div>
+    <div class="lbl">بيواجهوا جوع حاد<br><span style="font-size:38px;font-weight:700;color:rgba(255,246,220,.85)">(انعدام أمن غذائي حاد: المرحلة 3 فأسوأ)</span></div>
+    <div class="src">المصدر: التصنيف المرحلي المتكامل للأمن الغذائي (IPC)، مايو 2026</div></div>
+  <div class="abs stat" id="st4"><div class="big gold"><span class="n">825</span> ألف</div>
+    <div class="lbl">شافع تحت الخمسة سنين<br>سوء التغذية الحاد الوخيم مهدد حياتهم</div>
+    <div class="sub">توقعات 2026</div>
+    <div class="src">المصدر: يونيسف والفاو وبرنامج الأغذية العالمي، مايو 2026</div></div>
+
+  <!-- captions -->
+  <div class="abs cap" id="capA"><span class="gold">قريب 4 سنين حرب.. والصواني فاضية</span></div>
+  <div class="abs srcTag" id="srcWar" style="width:1000px;text-align:center">الحرب بدأت في 15 أبريل 2023 · المصدر: منظمة الصحة العالمية</div>
+  <div class="abs cap" id="capB"><span class="gold">ورا كل رقم.. أسرة كانت مستورة</span></div>
+  <div class="abs cap sm" id="capC"><span class="gold">وفي أم.. ما عارفة حتفطّر شُفّعها بشنو</span></div>
+  <div class="abs cap sm" id="capD"><span class="gold">صينيتها كانت بتمرق للضرا مليانة..</span></div>
+  <div class="abs cap sm" id="capE"><span class="gold">هسع بتقفل بابها.. وتستر حالها</span></div>
+  <div class="abs cap" id="capF"><span class="gold">الحرب ما في إيدنا..</span></div>
+  <div class="abs cap" id="capG"><span class="gold">لكن الصينية في إيدنا</span></div>
+  <div class="abs srcTag" id="imgTag" style="font-size:26px">مشاهد تعبيرية</div>
   <div class="abs cap sm" id="cap7"><span class="gold">لأسرة 6 أفراد لفترة أسبوعين</span></div>
-  <div class="abs cap sm" id="cap9a"><span class="gold">زي زمان.. شاركوا صينيتكم</span></div>
-  <div class="abs cap" id="cap9b"><span class="gold">وساهموا معانا بحقيبة</span></div>
-  <div class="abs cap sm" id="cap10"><span class="gold">اعملوها نفير.. مع الأهل والحبان</span></div>
 
   <!-- guide lantern -->
   <div class="abs" id="lanternGlow" style="width:560px;height:560px;border-radius:50%;
@@ -240,7 +261,7 @@
 
 <script>
 'use strict';
-const W = 1080, H = 1920, DURATION = 60;
+const W = 1080, H = 1920, DURATION = 68;
 const $ = id => document.getElementById(id);
 
 /* ---------- math ---------- */
@@ -422,34 +443,29 @@ function drawSparkles(t, a, cx, cy) {
   s.innerHTML = g;
 }
 
-/* ---------- lantern guide ---------- */
+/* ---------- lantern guide (dim through the hardship, flares on the turn) ---------- */
 const LANTERN = [
-  [0.0, { x: 860, y: 40, s: 1, b: 1 }],
-  [0.6, { x: 860, y: 250, s: 1, b: 1 }, 'elastic'],
-  [3.6, { x: 860, y: 250, s: 1, b: 1 }],
-  [4.6, { x: 210, y: 280, s: 1, b: 1 }, 'back'],
-  [6.7, { x: 230, y: 270, s: 1, b: 1 }],
-  [7.4, { x: 540, y: 205, s: .85, b: 1.05 }, 'back'],
-  [9.6, { x: 540, y: 205, s: .85, b: 1 }],
-  [10.8, { x: 840, y: 240, s: .8, b: .42 }, 'inOut'],
-  [16.9, { x: 840, y: 250, s: .8, b: .42 }],
-  [17.3, { x: 540, y: 300, s: 1.45, b: 1.6 }, 'back'],
-  [17.95, { x: 540, y: 250, s: 1, b: 1.15 }, 'out'],
-  [21.4, { x: 540, y: 250, s: 1, b: 1.1 }],
-  [22.1, { x: 880, y: 300, s: .9, b: 1 }, 'back'],
-  [24.9, { x: 880, y: 300, s: .9, b: 1 }],
-  [25.35, { x: 760, y: 425, s: .9, b: 1.3 }, 'in'],
-  [25.8, { x: 790, y: 330, s: .9, b: 1.2 }, 'out'],
-  [26.2, { x: 810, y: 425, s: .9, b: 1.1 }, 'in'],
-  [26.9, { x: 935, y: 175, s: .8, b: 1 }, 'back'],
-  [36.2, { x: 935, y: 175, s: .8, b: 1 }],
-  [36.9, { x: 140, y: 150, s: .62, b: 1 }, 'back'],
-  [47.9, { x: 140, y: 150, s: .62, b: 1.1 }],
-  [48.25, { x: 140, y: 150, s: .7, b: 1.6 }, 'out'],
-  [49.2, { x: 860, y: 860, s: .9, b: 1.1 }, 'inOut'],
-  [56.6, { x: 860, y: 880, s: .9, b: 1.1 }],
-  [57.3, { x: 82, y: 330, s: .6, b: 1.1 }, 'back'],
-  [60.0, { x: 82, y: 330, s: .6, b: 1.1 }],
+  [0.0, { x: 860, y: 40, s: 1, b: .5 }],
+  [0.8, { x: 860, y: 250, s: 1, b: .5 }, 'elastic'],
+  [6.3, { x: 860, y: 250, s: 1, b: .5 }],
+  [7.2, { x: 880, y: 215, s: .8, b: .42 }, 'inOut'],
+  [41.9, { x: 880, y: 225, s: .8, b: .42 }],
+  [42.5, { x: 540, y: 300, s: 1.45, b: 1.6 }, 'back'],
+  [43.2, { x: 540, y: 250, s: 1, b: 1.15 }, 'out'],
+  [45.6, { x: 540, y: 250, s: 1, b: 1.1 }],
+  [46.0, { x: 880, y: 300, s: .9, b: 1 }, 'back'],
+  [46.4, { x: 760, y: 425, s: .9, b: 1.3 }, 'in'],
+  [46.8, { x: 790, y: 330, s: .9, b: 1.2 }, 'out'],
+  [47.15, { x: 810, y: 425, s: .9, b: 1.1 }, 'in'],
+  [47.9, { x: 880, y: 300, s: .9, b: 1 }, 'back'],
+  [50.8, { x: 880, y: 300, s: .9, b: 1 }],
+  [51.5, { x: 140, y: 150, s: .62, b: 1 }, 'back'],
+  [57.4, { x: 140, y: 150, s: .62, b: 1.1 }],
+  [57.75, { x: 140, y: 150, s: .7, b: 1.6 }, 'out'],
+  [58.8, { x: 860, y: 860, s: .9, b: 1.1 }, 'inOut'],
+  [64.7, { x: 860, y: 880, s: .9, b: 1.1 }],
+  [65.4, { x: 82, y: 330, s: .6, b: 1.1 }, 'back'],
+  [68.0, { x: 82, y: 330, s: .6, b: 1.1 }],
 ];
 function lantern(t) {
   const k = keys(t, LANTERN);
@@ -460,34 +476,20 @@ function lantern(t) {
   pose('lanternGlow', { x: k.x, y: k.y + bob + 20, s: k.s * lerp(.55, 1.25, clamp(b / 1.6)), o: clamp(b * .9) });
 }
 
-/* ---------- payment choreography ---------- */
-// layout tuples: [x, y, scale, opacity, rotateY]
+/* ---------- payments: fan in, then one still screenshot frame ---------- */
 const PL = {
   hidden: [540, 1250, .4, 0, 0],
-  back: [540, 1000, .5, 0, 0],
   gone: [140, 150, .05, 0, 0],
   fan: { sd: [750, 960, .56, 1, -20], eg: [540, 930, .58, 1, 0], it: [330, 960, .56, 1, 20] },
-  sdFront: [540, 960, 1, 1, 0],
-  egDock: [540, 470, .7, 1, 0],
-  egFront: [540, 1000, 1, 1, 0],
-  egBelow: [540, 1320, .9, 0, 0],
-  it: { sd: [540, 395, .58, 1, 0], eg: [540, 715, .58, 1, 0], it: [540, 1120, 1, 1, 0] },
-  itBelow: [540, 1420, .9, 0, 0],
   all: { sd: [540, 585, .75, 1, 0], eg: [540, 976, .75, 1, 0], it: [540, 1324, .75, 1, 0] },
   end: { sd: [540, 655, .7, 1, 0], eg: [540, 1018, .7, 1, 0], it: [540, 1341, .7, 1, 0] },
 };
 const rise = v => [v[0], v[1] + 40, v[2], 0, 0];
-const PAYSEQ = {
-  sd: [[0, PL.hidden], [36.3, PL.hidden], [36.8, PL.fan.sd, 'out'], [37.3, PL.fan.sd], [37.8, PL.sdFront, 'out'],
-       [38.9, PL.sdFront], [39.3, PL.egDock, 'out'], [41.3, PL.egDock], [41.7, PL.it.sd, 'out'], [44.45, PL.it.sd],
-       [45.0, PL.all.sd, 'back'], [47.9, PL.all.sd], [48.3, PL.gone, 'in'], [57.1, rise(PL.end.sd)], [57.55, PL.end.sd, 'out'], [60, PL.end.sd]],
-  eg: [[0, PL.hidden], [36.4, PL.hidden], [36.9, PL.fan.eg, 'out'], [37.3, PL.fan.eg], [37.8, PL.back, 'inOut'],
-       [39.15, PL.egBelow], [39.65, PL.egFront, 'out'], [41.3, PL.egFront], [41.7, PL.it.eg, 'out'], [44.45, PL.it.eg],
-       [45.0, PL.all.eg, 'back'], [47.9, PL.all.eg], [48.3, PL.gone, 'in'], [57.25, rise(PL.end.eg)], [57.7, PL.end.eg, 'out'], [60, PL.end.eg]],
-  it: [[0, PL.hidden], [36.5, PL.hidden], [37.0, PL.fan.it, 'out'], [37.3, PL.fan.it], [37.8, PL.back, 'inOut'],
-       [41.55, PL.itBelow], [42.05, PL.it.it, 'out'], [44.45, PL.it.it],
-       [45.0, PL.all.it, 'back'], [47.9, PL.all.it], [48.3, PL.gone, 'in'], [57.4, rise(PL.end.it)], [57.85, PL.end.it, 'out'], [60, PL.end.it]],
-};
+function seqFor(card, d) {
+  return [[0, PL.hidden], [50.8 + d, PL.hidden], [51.3 + d, PL.fan[card], 'out'], [51.65, PL.fan[card]], [52.15 + d, PL.all[card], 'back'],
+    [57.5, PL.all[card]], [57.9, PL.gone, 'in'], [65.1 + d * 1.5, rise(PL.end[card])], [65.55 + d * 1.5, PL.end[card], 'out'], [68, PL.end[card]]];
+}
+const PAYSEQ = { sd: seqFor('sd', 0), eg: seqFor('eg', .1), it: seqFor('it', .2) };
 function payPose(t) {
   for (const card of ['sd', 'eg', 'it']) {
     const list = PAYSEQ[card].map(([tt, v, ease]) => [tt, { x: v[0], y: v[1], s: v[2], o: v[3], ry: v[4] }, ease]);
@@ -496,190 +498,157 @@ function payPose(t) {
   }
 }
 
+function card(id, t, a, b, opt = {}) { // generic glass card in/out
+  const pin = prog(t, a, a + (opt.fin ?? .6));
+  const out = E.inOut(prog(t, b - (opt.fout ?? .4), b));
+  if (t <= a || t >= b) return hide(id);
+  pose(id, { x: opt.x ?? 540, y: (opt.y ?? 830) + (1 - E.out(pin)) * (opt.dy ?? 50) + out * 40,
+    s: lerp(opt.s0 ?? .92, opt.s ?? 1, E.back(pin)) * (1 - out * .06), ry: (opt.ry ?? 0) * (1 - E.out(pin)),
+    o: clamp(pin * 2.5) * (1 - out) * (opt.o ?? 1), f: opt.f });
+}
+function stat(id, t, a, b) {
+  const pin = prog(t, a, a + .55), out = E.inOut(prog(t, b - .35, b));
+  if (t <= a || t >= b) return hide(id);
+  pose(id, { x: 540, y: 930, z: lerp(-300, 0, E.back(pin)), o: clamp(pin * 2.5) * (1 - out), s: 1 - out * .05 });
+}
+
 /* ---------- main render ---------- */
 function render(t) {
-  // mood: 0 warm, 1 cool
-  const cool = clamp(E.inOut(prog(t, 9.6, 10.8)) - E.inOut(prog(t, 16.9, 17.6)));
+  const cool = 1 - E.inOut(prog(t, 42.1, 43.0));
   const warm = 1 - cool;
 
-  // background
   const bgS = lerp(1.04, 1.16, t / DURATION);
   $('bg').style.transform = `scale(${bgS}) translateY(${lerp(0, -40, t / DURATION)}px)`;
-  $('bg').style.filter = `brightness(${lerp(1, .55, cool)}) saturate(${lerp(1.05, .55, cool)}) hue-rotate(${lerp(0, -14, cool)}deg)`;
+  $('bg').style.filter = `brightness(${lerp(1, .5, cool)}) saturate(${lerp(1.05, .5, cool)}) hue-rotate(${lerp(0, -14, cool)}deg)`;
   pose('bgWrap', { o: 1 });
   pose('tint', { o: cool * .9 });
-  const comm = env(t, 48.3, 61, .5, 0);
+  const comm = env(t, 57.8, 70, .5, 0);
   pose('commWrap', { o: comm });
-  $('comm').style.transform = `scale(${lerp(1.06, 1.18, E.inOut(prog(t, 48.3, 60)))})`;
-  const dim = E.inOut(prog(t, 56.6, 57.3));
+  $('comm').style.transform = `scale(${lerp(1.06, 1.18, E.inOut(prog(t, 57.8, 68)))})`;
+  const dim = E.inOut(prog(t, 64.7, 65.4));
   $('comm').style.filter = `brightness(${lerp(1, .5, dim)}) blur(${lerp(0, 6, dim)}px)`;
   pose('topshade', { o: comm });
   drawParticles(t, warm);
 
-  // ---- S1: hilu-mur card (0 - 3.8); faint from frame 0 so the first frame has a subject
+  // 0-6.5 hook: empty tray, war duration. 40.6-42.6 the same empty tray before the turn
   {
-    const pin = prog(t, 0, .9);
-    const flip = E.in(prog(t, 3.5, 3.82));
-    if (t < 3.82) pose('cardA', { x: 540, y: 830 + (1 - E.back(pin)) * 420, rx: (1 - E.out(pin)) * 28, ry: flip * 90, o: lerp(.2, 1, clamp(pin * 2)), s: lerp(.9, 1, E.back(pin)) });
-    else hide('cardA');
-    kb('cardA', t, 0, 3.8, 1.02, 1.12); sheen('cardA', t, 1.1);
+    const grey = 'saturate(.7) brightness(.85)';
+    if (t < 7) card('cardSparse', t, -1, 6.6, { y: 800, f: grey });
+    else card('cardSparse', t, 40.6, 42.7, { y: 800, f: grey });
+    if (t < .9) pose('cardSparse', { x: 540, y: 800 + (1 - E.out(prog(t, 0, .9))) * 120, o: lerp(.2, 1, E.out(prog(t, 0, .9))), f: grey });
+    kb('cardSparse', t, t < 20 ? 0 : 40.6, t < 20 ? 6.6 : 42.7, 1.0, 1.08);
+    caption('capA', t, .9, 6.4);
+    const sw = env(t, 2.0, 6.4, .5, .35);
+    if (sw > 0) pose('srcWar', { x: 540, y: 1625, o: sw }); else hide('srcWar');
   }
-  // ---- S2: dara card (3.82 - 6.9), gone before the fan opens
+  // 6.4-27.8 figures over the dimmed door; 36.4-40.6 the door itself
   {
-    const pin = prog(t, 3.82, 4.35);
-    const out = E.inOut(prog(t, 6.5, 6.9));
-    if (t >= 3.82 && t < 6.9) pose('cardB', { x: 540, y: 830 + out * 60, ry: -90 * (1 - E.back(pin)), s: lerp(1, .7, out), o: 1 - out, f: `blur(${out * 8}px)` });
-    else hide('cardB');
-    kb('cardB', t, 3.8, 7, 1.0, 1.14); sheen('cardB', t, 4.5);
+    if (t < 30) card('cardDoor', t, 6.4, 27.8, { y: 830, o: .6, f: 'brightness(.5) blur(3px)', s: 1.06, s0: 1.0 });
+    else card('cardDoor', t, 36.4, 40.65, { y: 830 });
+    kb('cardDoor', t, t < 30 ? 6.4 : 36.4, t < 30 ? 27.8 : 40.65, 1.12, 1.0);
+    stat('st1', t, 6.6, 13.75);
+    $('st1sub').style.opacity = E.out(prog(t, 11.6, 12.1));
+    stat('st2', t, 13.8, 18.4);
+    stat('st3', t, 18.45, 21.65);
+    stat('st4', t, 21.7, 27.65);
   }
-  // ---- S3: family fan (6.75 - 10.1); tilts away to the sides
+  // 27.7-31.0 behind every number: the families
   {
-    const pin = prog(t, 6.75, 7.5);
-    const nudge = Math.sin(Math.PI * prog(t, 8.2, 9.0));
-    const away = E.in(prog(t, 9.6, 10.1));
-    const p = E.back(pin);
-    const f = `brightness(${lerp(1, .55, away)}) saturate(${lerp(1, .5, away)})`;
-    if (t > 6.75 && t < 10.1) {
+    const pin = prog(t, 27.7, 28.4), away = E.in(prog(t, 30.6, 31.05)), p = E.back(pin);
+    const f = 'saturate(.55) brightness(.8)';
+    if (t > 27.7 && t < 31.05) {
       const o = clamp(pin * 3) * (1 - away);
       pose('fanMen', { x: lerp(540, 300, p) - away * 260, y: 850, rz: lerp(0, -8, p), ry: lerp(0, 14, p) + away * 35, s: lerp(.6, .76, p), z: -60, o, f });
       pose('fanGran', { x: lerp(540, 780, p) + away * 260, y: 850, rz: lerp(0, 8, p), ry: lerp(0, -14, p) - away * 35, s: lerp(.6, .76, p), z: -60, o, f });
-      pose('fanKids', { x: 540, y: 810 - nudge * 40 + away * 220, rx: away * 40, s: lerp(.6, .86, p) + nudge * .06, z: 40 + nudge * 80, o, f });
+      pose('fanKids', { x: 540, y: 810 + away * 220, rx: away * 40, s: lerp(.6, .86, p), z: 40, o, f });
     } else hide('fanMen', 'fanGran', 'fanKids');
-    ['fanMen', 'fanGran', 'fanKids'].forEach(id => kb(id, t, 6.8, 10.1, 1.0, 1.08));
+    ['fanMen', 'fanGran', 'fanKids'].forEach(id => kb(id, t, 27.7, 31.05, 1.0, 1.08));
+    caption('capB', t, 27.8, 30.95);
   }
-  // ---- S4: door (10.1 - 13.95)
+  // 31.1-34.2 a mother; 34.1-36.6 trays used to go out full
   {
-    const pin = E.out(prog(t, 10.1, 10.9));
-    const out = E.inOut(prog(t, 13.45, 13.85));
-    if (t > 10.1 && t < 13.85) pose('cardDoor', { x: 540, y: 830, s: lerp(.92, 1, pin) + out * .04, o: pin * (1 - out) });
-    else hide('cardDoor');
-    kb('cardDoor', t, 10, 14, 1.12, 1.0);
+    card('cardA', t, 31.05, 34.25, { f: 'saturate(.6) brightness(.8)' });
+    kb('cardA', t, 31, 34.3, 1.0, 1.1);
+    caption('capC', t, 31.2, 34.1);
+    card('cardB', t, 34.15, 36.6, { ry: -40, f: 'sepia(.25) saturate(.85)' });
+    kb('cardB', t, 34.1, 36.6, 1.0, 1.1);
+    caption('capD', t, 34.3, 36.4);
+    caption('capE', t, 36.5, 40.5);
   }
-  // ---- S5-S6: sparse tray -> bloom -> full tray (13.95 - 21.8)
+  // 40.6-44.2 the turn: empty tray -> bloom -> full tray
   {
-    const pin = prog(t, 13.75, 14.4);
-    const toFull = E.inOut(prog(t, 17.2, 17.7));
-    const up = E.inOut(prog(t, 18.1, 18.9));
-    const out = E.inOut(prog(t, 21.2, 21.8));
-    const y = lerp(800 + (1 - E.out(pin)) * 60, 1200, up) - out * 80;
-    const s = lerp(1, .74, up) * (1 - out * .2);
-    if (t > 13.75 && t < 17.7) pose('cardSparse', { x: 540, y, s: s * lerp(.92, 1, E.out(pin)), o: E.out(pin) * (1 - toFull) }); else hide('cardSparse');
-    if (t > 17.2 && t < 21.8) pose('cardFull', { x: 540, y, s, o: toFull * (1 - out), f: `brightness(${lerp(1, .9, up)})` }); else hide('cardFull');
-    const bl = Math.sin(Math.PI * prog(t, 17.05, 17.9));
-    if (bl > 0) pose('bloom', { x: 540, y: 800, s: lerp(.6, 1.15, prog(t, 17.05, 17.9)), o: bl * .95 }); else hide('bloom');
-    kb('cardSparse', t, 14, 18, 1.0, 1.06); kb('cardFull', t, 17.2, 21.8, 1.1, 1.0); sheen('cardFull', t, 18.0, 1.2);
+    caption('capF', t, 40.7, 42.25);
+    caption('capG', t, 42.3, 44.15);
+    card('cardFull', t, 42.35, 44.6, { y: 800, fin: .4, s0: 1 });
+    kb('cardFull', t, 42.3, 44.6, 1.1, 1.0); sheen('cardFull', t, 43.0, 1.0);
+    const bl = Math.sin(Math.PI * prog(t, 42.0, 42.9));
+    if (bl > 0) pose('bloom', { x: 540, y: 800, s: lerp(.6, 1.15, prog(t, 42.0, 42.9)), o: bl * .95 }); else hide('bloom');
   }
-  // title panel (18.25 - 21.75)
+  // 44.2-46.0 title; 45.9-47.9 price; 47.7-51 basket, family of six, two weeks
   {
-    const pin = prog(t, 18.25, 19.05);
-    const out = E.inOut(prog(t, 21.2, 21.75));
-    if (t > 18.25 && t < 21.75) pose('titlePanel', { x: 540, y: lerp(1500, 640, E.back(pin)) - out * 260, rx: (1 - E.out(prog(t, 18.6, 19.3))) * -80, s: lerp(.6, 1, E.back(pin)) * (1 - out * .35), o: clamp(pin * 3) * (1 - out) });
+    const pin = prog(t, 44.15, 44.9), out = E.inOut(prog(t, 45.55, 46.0));
+    if (t > 44.15 && t < 46.0) pose('titlePanel', { x: 540, y: lerp(1500, 700, E.back(pin)) - out * 200, rx: (1 - E.out(prog(t, 44.4, 45.0))) * -80, s: lerp(.6, 1, E.back(pin)) * (1 - out * .3), o: clamp(pin * 3) * (1 - out) });
     else hide('titlePanel');
-    drawSparkles(t, 19.1, 540, 640);
-  }
-  // ---- S7: basket + family + two weeks (21.6 - 25.3); basket stays through the price beat
-  {
-    const pin = prog(t, 21.6, 22.4);
-    const out = E.inOut(prog(t, 24.8, 25.3));
-    const p = E.back(pin);
-    if (t > 21.6 && t < 27.5) {
-      const mv = E.inOut(prog(t, 24.85, 25.4));
-      const bOut = E.inOut(prog(t, 27.1, 27.5));
-      const bounce = Math.sin(Math.PI * prog(t, 26.7, 27.05));
-      const bY = lerp(lerp(1300, 540, p), 1300, mv);
-      const bS = lerp(lerp(.5, .9, p), .58, mv) * (1 + .12 * bounce);
-      pose('basket', { x: 540, y: bY + Math.sin(t * 2) * 6, s: bS, sy: bS * (1 - .08 * bounce), ry: Math.sin(t * 1.3) * 10, o: clamp(pin * 3) * (1 - bOut),
-        f: `drop-shadow(0 24px 30px rgba(0,0,0,.45)) brightness(${1 + .35 * bounce})` });
-      pose('pedestal', { x: 540, y: bY + 250 * bS, s: bS, o: clamp(pin * 3) * (1 - bOut) * .95 });
+    drawSparkles(t, 44.8, 540, 700);
+
+    const pp = prog(t, 45.9, 46.5), sh = E.in(prog(t, 47.45, 47.85));
+    if (t > 45.9 && t < 47.85) {
+      pose('priceCard', { x: 540, y: lerp(820, 560, sh), z: lerp(-500, 0, E.back(pp)), s: lerp(1, .1, sh), o: clamp(pp * 3) * (1 - clamp((sh - .7) / .3)) });
+      $('fifty').style.transform = `scale(${1 + .12 * Math.sin(Math.PI * prog(t, 46.3, 46.7))})`;
+    } else hide('priceCard');
+
+    const bp = prog(t, 47.7, 48.4), bOut = E.inOut(prog(t, 50.55, 51.0)), p = E.back(bp);
+    const bounce = Math.sin(Math.PI * prog(t, 47.75, 48.1));
+    if (t > 47.7 && t < 51.0) {
+      const bS = lerp(.5, .9, p) * (1 + .1 * bounce);
+      pose('basket', { x: 540, y: 540 + Math.sin(t * 2) * 6, s: bS, ry: Math.sin(t * 1.3) * 10, o: clamp(bp * 3) * (1 - bOut), f: `drop-shadow(0 24px 30px rgba(0,0,0,.45)) brightness(${1 + .35 * bounce})` });
+      pose('pedestal', { x: 540, y: 540 + 250 * bS, s: bS, o: clamp(bp * 3) * (1 - bOut) * .95 });
     } else hide('basket', 'pedestal');
-    if (t > 22.0 && t < 25.3) {
-      pose('house', { x: 540, y: 1020, o: E.out(prog(t, 22.0, 22.4)) * (1 - out), s: 1 - out * .1 });
+    if (t > 47.95 && t < 51.0) {
+      pose('house', { x: 540, y: 1020, o: E.out(prog(t, 47.95, 48.3)) * (1 - bOut) });
       for (let i = 0; i < 6; i++) {
-        const pp = prog(t, 22.25 + i * .15, 22.25 + i * .15 + .4);
-        const el = $('pp' + i);
-        el.style.opacity = clamp(pp * 3);
-        el.style.transform = `scale(${E.back(pp)})`;
+        const q = prog(t, 48.1 + i * .12, 48.1 + i * .12 + .35);
+        $('pp' + i).style.opacity = clamp(q * 3);
+        $('pp' + i).style.transform = `scale(${E.back(q)})`;
       }
       const hl = $('houseLine');
-      hl.style.strokeDasharray = '2000'; hl.style.strokeDashoffset = `${2000 * (1 - E.out(prog(t, 22.0, 22.9)))}`;
+      hl.style.strokeDasharray = '2000'; hl.style.strokeDashoffset = `${2000 * (1 - E.out(prog(t, 47.95, 48.7)))}`;
     } else hide('house');
-    if (t > 23.0 && t < 25.3) { pose('weeks', { x: 540, y: 1335, o: E.out(prog(t, 23.0, 23.3)) * (1 - out) }); setWeeks(t, 23.2); }
+    if (t > 48.5 && t < 51.0) { pose('weeks', { x: 540, y: 1335, o: E.out(prog(t, 48.5, 48.8)) * (1 - bOut) }); setWeeks(t, 48.7); }
     else hide('weeks');
-    caption('cap7', t, 22.0, 24.85, CAP_Y);
+    caption('cap7', t, 48.0, 50.85, CAP_Y);
   }
-  // ---- S8: price (24.95 - 26.75), then the card drops into the basket
-  {
-    const pin = prog(t, 24.95, 25.55);
-    const sh = E.in(prog(t, 26.35, 26.75));
-    if (t > 24.95 && t < 26.75) {
-      pose('priceCard', { x: 540, y: lerp(820, 1215, sh), z: lerp(-500, 0, E.back(pin)), s: lerp(1, .1, sh), o: clamp(pin * 3) * (1 - clamp((sh - .7) / .3)) });
-      $('fifty').style.transform = `scale(${1 + .12 * Math.sin(Math.PI * prog(t, 25.3, 25.7))})`;
-    } else hide('priceCard');
-  }
-  // ---- S9: hands carrying tray (27.15 - 32.4)
-  {
-    const pin = prog(t, 27.15, 27.95);
-    const out = E.inOut(prog(t, 31.8, 32.4));
-    if (t > 27.15 && t < 32.4) pose('cardHands', { x: lerp(540, 300, out), y: 830, ry: lerp(-35, 0, E.out(pin)) + out * 50, s: lerp(.85, 1, E.back(pin)) * (1 - out * .2), o: clamp(pin * 3) * (1 - out) });
-    else hide('cardHands');
-    kb('cardHands', t, 27.2, 32.4, 1.0, 1.12); sheen('cardHands', t, 28.3);
-    const mb = prog(t, 29.75, 30.35);
-    if (t > 29.75 && t < 32.4) pose('miniBasket', { x: lerp(540, 300, out), y: 1240 - E.back(mb) * 40, s: E.back(mb), o: clamp(mb * 3) * (1 - out), f: 'drop-shadow(0 18px 24px rgba(0,0,0,.5))' });
-    else hide('miniBasket');
-    caption('cap9a', t, 27.5, 29.7, CAP_Y);
-    caption('cap9b', t, 29.7, 32.3, CAP_Y);
-  }
-  // ---- S10: nafeer (32.0 - 36.3)
-  {
-    const pin = prog(t, 32.0, 32.8);
-    const out = E.inOut(prog(t, 35.8, 36.3));
-    if (t > 32.0 && t < 36.3) pose('cardNafeer', { x: lerp(780, 540, E.out(pin)), y: 830 - out * 80, ry: lerp(40, 0, E.out(pin)), s: lerp(.85, 1, E.back(pin)) * (1 - out * .4), o: clamp(pin * 3) * (1 - out) });
-    else hide('cardNafeer');
-    kb('cardNafeer', t, 32, 36.3, 1.0, 1.1); sheen('cardNafeer', t, 33.0);
-    const c1 = prog(t, 33.2, 33.8), c2 = prog(t, 33.55, 34.15);
-    if (t > 33.2 && t < 36.3) {
-      pose('chipAhl', { x: lerp(-200, 300, E.back(c1)), y: 1240, rz: -6, o: clamp(c1 * 3) * (1 - out) });
-      pose('chipHub', { x: lerp(1280, 780, E.back(c2)), y: 1150, rz: 6, o: clamp(c2 * 3) * (1 - out) });
-    } else hide('chipAhl', 'chipHub');
-    caption('cap10', t, 32.4, 36.15, CAP_Y);
-  }
-  // ---- S11-S16 payments
+  // 50.9-57.7 payments + WhatsApp
   payPose(t);
   {
-    const wa = env(t, 45.1, 48.2, .6, .3);
-    const waEnd = env(t, 57.6, 61, .5, 0);
-    if (wa > 0) pose('waChip', { x: 540, y: 1581 + (1 - E.back(prog(t, 45.1, 45.7))) * 60, o: wa, s: .9 * lerp(.85, 1, E.back(prog(t, 45.1, 45.7))) });
-    else if (waEnd > 0) pose('waChip', { x: 540, y: 1587 + (1 - E.out(prog(t, 57.6, 58.1))) * 40, o: waEnd, s: .9 });
+    const wa = env(t, 54.4, 57.6, .5, .3);
+    const waEnd = env(t, 65.7, 70, .5, 0);
+    if (wa > 0) pose('waChip', { x: 540, y: 1581 + (1 - E.back(prog(t, 54.4, 55.0))) * 60, o: wa, s: .9 * lerp(.85, 1, E.back(prog(t, 54.4, 55.0))) });
+    else if (waEnd > 0) pose('waChip', { x: 540, y: 1587 + (1 - E.out(prog(t, 65.7, 66.2))) * 40, o: waEnd, s: .9 });
     else hide('waChip');
-    const sc = env(t, 44.6, 48.2, .5, .3);
-    if (sc > 0) pose('shotChip', { x: 540, y: 271 - (1 - E.back(prog(t, 44.6, 45.1))) * 60, o: sc, s: .9 });
+    const sc = env(t, 52.15, 57.6, .5, .3);
+    if (sc > 0) pose('shotChip', { x: 540, y: 271 - (1 - E.back(prog(t, 52.15, 52.65))) * 60, o: sc, s: .9 });
     else hide('shotChip');
-    const fl = t > 44.62 && t < 45.0 ? (1 - prog(t, 44.62, 45.0)) * .55 : 0;
-    pose('flash', { o: fl });
+    pose('flash', { o: t > 52.2 && t < 52.55 ? (1 - prog(t, 52.2, 52.55)) * .5 : 0 });
   }
-  // ---- S15 proverb (48.9 - 56.8)
+  // 57.8-65 proverb
   {
-    const out = E.inOut(prog(t, 56.3, 56.8));
-    const p1 = prog(t, 48.9, 50.0), p2 = prog(t, 51.6, 52.7), p3 = prog(t, 53.2, 54.4);
-    if (t > 48.9 && t < 56.8) pose('prov1', { x: 540, y: 330 - (1 - E.out(p1)) * 30, o: clamp(p1 * 2) * (1 - out), clip: wipe(p1) }); else hide('prov1');
-    if (t > 51.6 && t < 56.8) pose('prov2', { x: 540, y: 470, s: lerp(.85, 1, E.back(p2)), o: clamp(p2 * 2) * (1 - out), clip: wipe(p2) }); else hide('prov2');
-    if (t > 53.2 && t < 56.8) pose('prov3', { x: 540, y: 600, o: clamp(p3 * 2) * (1 - out), clip: wipe(p3) }); else hide('prov3');
+    const out = E.inOut(prog(t, 64.5, 65.0));
+    const p1 = prog(t, 58.0, 59.2), p2 = prog(t, 60.6, 61.7), p3 = prog(t, 61.7, 62.9);
+    if (t > 58.0 && t < 65.0) pose('prov1', { x: 540, y: 330 - (1 - E.out(p1)) * 30, o: clamp(p1 * 2) * (1 - out), clip: wipe(p1) }); else hide('prov1');
+    if (t > 60.6 && t < 65.0) pose('prov2', { x: 540, y: 470, s: lerp(.85, 1, E.back(p2)), o: clamp(p2 * 2) * (1 - out), clip: wipe(p2) }); else hide('prov2');
+    if (t > 61.7 && t < 65.0) pose('prov3', { x: 540, y: 600, o: clamp(p3 * 2) * (1 - out), clip: wipe(p3) }); else hide('prov3');
   }
-  // ---- S16 end card: title first, then cards, then WhatsApp
+  // 65-68 end card
   {
-    const p = prog(t, 56.9, 57.4);
-    if (t > 56.9) pose('endTitle', { x: 540, y: 320, s: lerp(.8, 1, E.back(p)), o: clamp(p * 2) }); else hide('endTitle');
+    const p = prog(t, 65.0, 65.5);
+    if (t > 65.0) pose('endTitle', { x: 540, y: 320, s: lerp(.8, 1, E.back(p)), o: clamp(p * 2) }); else hide('endTitle');
   }
-
-  // ---- captions S1-S5
-  caption('cap1', t, .5, 3.45);
-  caption('cap2', t, 4.0, 6.5);
-  caption('cap3', t, 7.2, 9.6);
-  caption('cap4', t, 10.5, 13.45);
-  caption('cap5', t, 14.1, 17.1);
+  const tag = env(t, .5, 57.6, .5, .3) * (t > 50.9 && t < 57.6 ? 0 : 1);
+  if (tag > 0) pose('imgTag', { x: 140, y: 1800, o: tag * .8 }); else hide('imgTag');
 
   lantern(t);
-  pose('frame', { x: 540, y: 960, o: lerp(.85, .5, cool) + .3 * Math.sin(Math.PI * prog(t, 17.1, 18.2)) });
+  pose('frame', { x: 540, y: 960, o: lerp(.85, .5, cool) + .3 * Math.sin(Math.PI * prog(t, 42.3, 43.4)) });
   pose('vignette', { o: 1 });
 }
 

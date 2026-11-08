@@ -6,7 +6,7 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const FPS = 30, DURATION = 60, W = 1080, H = 1920;
+const FPS = 30, DURATION = 68, W = 1080, H = 1920;
 const PAGE = 'file://' + path.resolve(__dirname, 'index.html');
 
 async function openPage(browser) {

@@ -3,3 +3,4 @@ render.log
 # full-quality masters are re-renderable: node anim/render.js video
 *-draft[0-9].mp4
 *-master.mp4
+*-silent-draft[0-9].mp4
