@@ -1,0 +1,158 @@
+{
+  "title_ar": "زي زمان.. مبادرة حقيبة رمضان",
+  "segments": [
+    {
+      "start": 0,
+      "end": 3.5,
+      "vo_ar": "فاكرين ريحة عواسة الحلو مر في الحوش؟",
+      "on_screen_ar": "ريحة الحلو مر.. فاكرينها؟",
+      "visual": "Frame 1 is already lit: a dusk-blue sky, a thin gold crescent top-right, a gold arabesque lattice glowing at the edges, and the hook text in gold on a cream glass chip. 0.0-0.6s: a brass Ramadan lantern (the guide object, replacing the reference's blue sphere) drops in on an elastic bounce and flares warm amber. A rounded frosted-cream glass card with a gold rim slides up in 3D. Inside it, a warm close-up of a woman's hands only, spreading thin hilu-mur sheets on a hot saj in a mud-brick courtyard (Higgsfield still). The steam curls up and turns into gold particles that drift out of the card. VO starts at about 0.3s.",
+      "en": "Remember the smell of hilu-mur being made in the courtyard?"
+    },
+    {
+      "start": 3.5,
+      "end": 6.7,
+      "vo_ar": "والبروش في الضرا، وكل بيت مارق بصينيتو..",
+      "on_screen_ar": "البروش في الضرا",
+      "visual": "The card flips with a bubbly overshoot to a street at sunset: long rows of woven palm mats in front of mud-brick houses, and figures seen from behind carrying round trays under conical woven covers (Higgsfield still, stylised, no faces). The lantern bounces along the row of mats like a guide. The card has emerald and gold edges and cream highlights, with a quick push-in partway through the beat.",
+      "en": "And the mats out at the dara, and every house stepping out with its tray..."
+    },
+    {
+      "start": 6.7,
+      "end": 9.7,
+      "vo_ar": "ولمة الأهل.. والشفع مترجين المغرب.",
+      "on_screen_ar": "لمة الأهل",
+      "visual": "Three translucent glass cards fan out in a 3D stack, as in the reference. Card 1 is a grandmother (habbooba) in a white toob, card 2 is uncles in jalabiya and imma (silent visual, not named in the VO), card 3 is laughing children looking toward the sunset. They are warm, stylised 3D figures, not photoreal faces. Mosque silhouettes and the crescent sit behind them on dusk blue. On 'والشفع' card 3 nudges forward. The lantern settles in the middle of the fan and glows brighter.",
+      "en": "And the family gathering... the little ones waiting for maghrib."
+    },
+    {
+      "start": 9.7,
+      "end": 13.9,
+      "vo_ar": "لكن من قامت الحرب، ناس كتار من أهلنا خلوا بيوتهم.",
+      "on_screen_ar": "ناس كتار من أهلنا خلوا بيوتهم",
+      "visual": "The mood shifts with no violence. The cards slowly tilt back, the palette cools to dusk blue and slate, and the motion slows. One card comes forward showing the closed wooden door of a mud-brick house with a single folded mat leaning against it, and dust drifting in low light. The lantern dims and sways but stays lit. No ruins, weapons, flags or people.",
+      "en": "But since the war broke out, many of our people have left their homes."
+    },
+    {
+      "start": 13.9,
+      "end": 17,
+      "vo_ar": "ورمضان دا، صينيتهم ما زي زمان.",
+      "on_screen_ar": "صينية رمضان.. ما زي زمان",
+      "visual": "A single cream glass card floats in the centre. Seen from above, a round iftar tray sits sparsely set on a mat next to its woven cover, in a cool rim light. No people, no faces. The crescent sits small and quiet above, and the on-screen line fades in letter by letter in gold.",
+      "en": "And this Ramadan, their tray isn't what it used to be."
+    },
+    {
+      "start": 17,
+      "end": 21.5,
+      "vo_ar": "عشان الصينية تتملى تاني.. دي مبادرة حقيبة رمضان.",
+      "on_screen_ar": "مبادرة حقيبة رمضان\nلأهلنا في السودان",
+      "visual": "The turn to hope. On the '..' pause the lantern flares gold and bounces to centre screen with an elastic pop. An emerald glass panel with a gold arabesque frame springs up from the bottom and flips in 3D to show the initiative name in gold calligraphy on a cream inner card, timed so the name is fully on screen as it is spoken word by word, and a sparkle sweeps across the glass. The lattice pulses outward and warmth washes back across the frame. Behind the panel, the woven cover from the previous beat lifts to reveal a full, colourful tray. A small slot under the title is reserved for a family tag ('مبادرة أسرية' or similar) and stays empty until the organisers confirm the wording.",
+      "en": "So that the tray fills up again... this is the Ramadan Bag Initiative."
+    },
+    {
+      "start": 21.5,
+      "end": 24.9,
+      "vo_ar": "حقيبة وحدة بتكفي بيت فيهو ستة أنفار.. أسبوعين.",
+      "on_screen_ar": "لأسرة 6 أفراد لفترة أسبوعين",
+      "visual": "Hero product beat. A single wicker basket like the poster's (sacks of grains/legumes, rice, a bottle of cooking oil, canned goods, dates) turns slowly on a frosted-glass pedestal, with no item labels or name chips. Beside it, six faceless glass figures of mixed heights (no fixed adult/child split) pop in one by one inside a warmly lit house outline. On 'أسبوعين' a strip of 14 tiny gold lanterns lights up left to right to show the two weeks. No equals sign is placed between money and people.",
+      "en": "One single bag is enough for a home of six people... for two weeks."
+    },
+    {
+      "start": 24.9,
+      "end": 27.4,
+      "vo_ar": "وحقها كم؟ قدر خمسين دولار.",
+      "on_screen_ar": "تكلفة الحقيبة ما يعادل 50 دولار",
+      "visual": "A large frosted-cream card zooms forward with a big gold '50 $' and a shimmer sweeping across it. The lantern drops onto the number and bounces once. The gold chip then falls into the basket and grows as it lands, and the basket glows.",
+      "en": "And what does it cost? The equivalent of fifty dollars."
+    },
+    {
+      "start": 27.4,
+      "end": 32,
+      "vo_ar": "زي زمان، مرقوا صينيتكم لأهلنا.. ساهموا معانا بحقيبة.",
+      "on_screen_ar": "مرّقوا صينيتكم.. ساهموا معانا بحقيبة",
+      "visual": "Back to the warm sunset street from 3.5s. A doorway glows, and hands (hands only) carry a covered tray out toward the mats. On the '..' pause the tray touches the mat and morphs into the wicker basket with an elastic pop. The ask line writes on in gold as 'ساهموا معانا بحقيبة' is spoken softly. The lantern hops ahead like a guide, with emerald and gold at full warmth.",
+      "en": "Like the old days, bring out your tray for our people... contribute a bag with us."
+    },
+    {
+      "start": 32,
+      "end": 36.4,
+      "vo_ar": "وما ضروري تشيلوها براكم، لموا حقها مع الأهل والحبان.",
+      "on_screen_ar": "اعملوها نفير مع الأهل والحبان",
+      "visual": "The basket sits on one small glass card that wobbles and dips under its weight. Two more glass cards labelled الأهل and الحبان slide in from the sides, lock underneath it in a fanned 3D stack, and lift it together. A gold glow runs through the stack, showing the nafeer (communal turnout to help) visually.",
+      "en": "And you don't have to carry it alone: pool its cost with family and loved ones."
+    },
+    {
+      "start": 36.4,
+      "end": 39.1,
+      "vo_ar": "لو بالسوداني: بنكك ولا فوري.",
+      "on_screen_ar": "بالجنيه السوداني\nبنكك: 1705155 — وثام محمد هاشم\nفوري: 51326349 — عالية محمد هاشم",
+      "visual": "The stack reshuffles into three frosted payment cards fanned in 3D, with emerald edges and gold trim. The Sudanese-pound card swings forward and fills most of the frame: a cream panel with dark emerald text, and large Western digits set as left-to-right isolated runs. It holds still so it can be read. No screenshot cue on this card; the lantern sits at the top like a guide.",
+      "en": "If you're paying in Sudanese pounds: Bankak or Fawry."
+    },
+    {
+      "start": 39.1,
+      "end": 41.5,
+      "vo_ar": "ولو بالمصري: انستا باي.",
+      "on_screen_ar": "بالجنيه المصري\nانستا باي: 01556578356 — هبه جبرالله محمد خير",
+      "visual": "The Sudanese-pound card slides up and docks at the top as a smaller card that is still readable; it does not leave the screen. The Egyptian-pound card comes forward with an elastic snap, in the same clean, high-contrast layout, and holds still.",
+      "en": "And if in Egyptian pounds: InstaPay."
+    },
+    {
+      "start": 41.5,
+      "end": 44.5,
+      "vo_ar": "ولو من برا مصر: تحويل بنكي.",
+      "on_screen_ar": "التحويل من خارج مصر\nIBAN: EG910030255200000100001291112\nAbu Dhabi Islamic Bank - Egypt\nAccount name: Hiba Gabralla Mohamed Khair\nCurrency: USD\nSWIFT code: ABDIEGCA\nأو ويسترن يونيون",
+      "visual": "The InstaPay card docks under the first one. The outside-Egypt card comes forward as the largest card. It has an Arabic heading, then the Latin block set as its own left-to-right paragraph. The IBAN and SWIFT code are in a monospace font, each as a single unbroken run with no grouping or wrapping, and gold divider lines separate the fields. The card holds still; only the lattice drifts slowly behind it.",
+      "en": "And if from outside Egypt: bank transfer."
+    },
+    {
+      "start": 44.5,
+      "end": 48.5,
+      "vo_ar": "صوروا الشاشة.. ورسلوا لينا الإشعار في الواتساب.",
+      "on_screen_ar": "صوروا الشاشة\nبالجنيه السوداني\nبنكك: 1705155 — وثام محمد هاشم\nفوري: 51326349 — عالية محمد هاشم\nبالجنيه المصري\nانستا باي: 01556578356 — هبه جبرالله محمد خير\nالتحويل من خارج مصر\nIBAN: EG910030255200000100001291112\nAbu Dhabi Islamic Bank - Egypt\nAccount name: Hiba Gabralla Mohamed Khair\nCurrency: USD\nSWIFT code: ABDIEGCA\nأو ويسترن يونيون\nتحويل الإشعار واتساب\n+201001510986",
+      "visual": "All three cards settle into one still, fanned 'screenshot frame' that shows every detail at once, with the WhatsApp row at the bottom set largest and the +201001510986 number on its own left-to-right line. As the frame lands at 44.5s and 'صوروا الشاشة' is spoken, a small gold camera tag reading 'صوروا الشاشة' pulses at the top; this is the only place the screenshot cue appears. On 'رسلوا لينا الإشعار' the WhatsApp row pulses and a small cream receipt icon flies into a gold-outlined chat bubble (no third-party logos). The frame holds. From about 48.0s the music swells under the still image for about half a second, before the proverb.",
+      "en": "Take a screenshot... and send us the transfer receipt on WhatsApp."
+    },
+    {
+      "start": 48.5,
+      "end": 51.5,
+      "vo_ar": "الخير ما بكتر بمال زول واحد..",
+      "on_screen_ar": "الخير ما بكتر بمال زول واحد",
+      "visual": "The camera pulls back from the cards into a wide dusk sky. One lantern hangs alone above emerald mosque silhouettes and the crescent, framed by gold lattice. The first half of the proverb writes on slowly in gold calligraphy across a cream glass panel.",
+      "en": "Goodness doesn't grow from one person's money..."
+    },
+    {
+      "start": 51.5,
+      "end": 57,
+      "vo_ar": "الخير بكتر بقلوب كتيرة اجتمعت على المحبة والعطاء.",
+      "on_screen_ar": "الخير بكتر بقلوب كتيرة اجتمعت على المحبة والعطاء",
+      "visual": "The tray payoff, given 5.5s so the line is not rushed. Cut back to the dara street at maghrib with the mats laid out again. Hands reach in from every edge of the frame and each sets down a full, covered tray in one long row, while dozens of lanterns rise and gather around the first one. The second half of the proverb writes on in gold, with emerald and gold at full saturation. The camera then rises slowly and settles on the basket hero shot by about 56.5s, as 'والعطاء' lands with the music resolving. No recipients are shown.",
+      "en": "Goodness grows from many hearts that came together in love and giving."
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "vo_ar": "",
+      "on_screen_ar": "مبادرة حقيبة رمضان\nمرّقوا صينيتكم.. ساهموا معانا بحقيبة\nتحويل الإشعار واتساب\n+201001510986\nبالجنيه السوداني\nبنكك: 1705155 — وثام محمد هاشم\nفوري: 51326349 — عالية محمد هاشم\nبالجنيه المصري\nانستا باي: 01556578356 — هبه جبرالله محمد خير\nالتحويل من خارج مصر\nIBAN: EG910030255200000100001291112\nAbu Dhabi Islamic Bank - Egypt\nAccount name: Hiba Gabralla Mohamed Khair\nCurrency: USD\nSWIFT code: ABDIEGCA\nأو ويسترن يونيون",
+      "visual": "Music only. A static end card held for 3s so viewers can screenshot it, and so the looping last frame on Status, Reels and Shorts still carries the ask. The wicker basket sits on a glass pedestal under the crescent and lanterns, inside an emerald panel with a gold frame. The initiative name is in gold calligraphy with the ask line in gold beneath it. The WhatsApp number is set largest on a cream card. A compact cream panel repeats every payment detail under its routing heading (بالجنيه السوداني above Bankak and Fawry, بالجنيه المصري above InstaPay, التحويل من خارج مصر above the IBAN block), with all numbers as left-to-right runs, so a single saved frame still shows which route is for which currency. The lantern sways gently as the music resolves.",
+      "en": "(music only)"
+    }
+  ],
+  "full_vo_ar": "فاكرين ريحة عواسة الحلو مر في الحوش؟\nوالبروش في الضرا، وكل بيت مارق بصينيتو..\nولمة الأهل.. والشفع مترجين المغرب.\nلكن من قامت الحرب، ناس كتار من أهلنا خلوا بيوتهم.\nورمضان دا، صينيتهم ما زي زمان.\nعشان الصينية تتملى تاني.. دي مبادرة حقيبة رمضان.\nحقيبة وحدة بتكفي بيت فيهو ستة أنفار.. أسبوعين.\nوحقها كم؟ قدر خمسين دولار.\nزي زمان، مرقوا صينيتكم لأهلنا.. ساهموا معانا بحقيبة.\nوما ضروري تشيلوها براكم، لموا حقها مع الأهل والحبان.\nلو بالسوداني: بنكك ولا فوري.\nولو بالمصري: انستا باي.\nولو من برا مصر: تحويل بنكي.\nصوروا الشاشة.. ورسلوا لينا الإشعار في الواتساب.\nالخير ما بكتر بمال زول واحد..\nالخير بكتر بقلوب كتيرة اجتمعت على المحبة والعطاء.",
+  "spoken_word_count": 109,
+  "est_spoken_seconds": 52,
+  "delivery_notes": "VOICE: Cast a warm Sudanese voice from Khartoum or central Sudan, ideally a woman with the gentle register of a khala telling family stories. A real Sudanese person, ideally from the family, is strongly preferred over text-to-speech. Speak conversationally, not like an announcer. The script addresses everyone in the plural (فاكرين، مرقوا، صوروا، رسلوا) on purpose; keep it plural. The VO now speaks from inside the family ('ساهموا معانا بحقيبة', 'رسلوا لينا الإشعار'), which suits a family member recording it. If the voice is not from the family, use 'ساهموا بحقيبة' and 'ورسلوا الإشعار في الواتساب' instead (same beats, slightly shorter), and change the on-screen ask line to 'مرّقوا صينيتكم.. ساهموا بحقيبة'.\n\nPRONUNCIATION: Use the Sudanese g for ق throughout: حقيبة = ḥagība, حقها = ḥaggaha, قدر = gadur, بقلوب = bi-gulūb, قامت = gāmat. Other words:\n- عواسة = 'awāsa (single w: the act of making it, as in عواسة الكسرة)\n- الحلو مر = al-ḥilu murr\n- الحوش = al-ḥōsh\n- البروش = al-burūsh\n- الضرا: emphatic ḍ, often heard as aḍ-ḍura; the speaker should use their own natural vowel\n- مارق = māreg\n- بصينيتو = bi-ṣīnītu\n- الشفع = ash-shuffa'\n- مترجين = mitrajjīn\n- ناس كتار = nās kutār\n- خلوا = khallo\n- رمضان دا = ramaḍān da\n- صينيتهم = ṣīnīt-hum\n- تتملى = titmala (single l, not titmalla); have the native voice confirm it\n- تاني = tāni\n- وحدة = waḥda\n- بتكفي = bitkaffi\n- فيهو = fīhu\n- أنفار = anfār\n- مرقوا = marrigu (doubled r, meaning \"bring out\", not \"went out\")\n- معانا = ma'āna\n- براكم = barākum\n- لموا = lummu\n- ولا = walla (meaning \"or\")\n- برا = barra\n- صوروا = ṣawwiru\n- رسلوا = rassilu\n- لينا = līna\n- الإشعار = al-ish'ār\n- بكتر = biktar\n- اجتمعت = ijtama'at\n- العطاء = al-'aṭa, with no final glottal stop, said the way a Sudanese grandmother says it. The proverb's words stay verbatim, but read them in the khala's voice, not as an MSA recitation.\n\nIf TTS is used anyway, feed it phonetic respellings and have a native speaker approve the audio before the edit.\n\nPACE AND SHAPE: Pace is now planned in syllables per second, not words per second, because Arabic words with attached prefixes run 2.5-3 syllables each. The target is about 4-5.3 syllables per second for most lines, under 4.5 for the war line, the tray line and the proverb. The pooling line (32.0-36.4) is the densest at about 5.5, which is normal conversational speed.\n- 0.3-9.7s: warm, smiling, brisk enough to hook. Start the VO at 0.3s, under the lantern drop. Let \"مارق بصينيتو..\" trail off, and leave a tiny breath after \"ولمة الأهل..\". \"والشفع مترجين المغرب\" should sound fond and amused.\n- 9.7-17.0s: before \"لكن\" take a real breath as the music cools. Read the war line and \"ورمضان دا، صينيتهم ما زي زمان\" slower and lower, quiet and dignified, never tearful or dramatic.\n- 17.0s: lift on \"عشان الصينية تتملى تاني\". Pause on the \"..\" as the lantern flares, then say \"دي مبادرة حقيبة رمضان\" slowly, one word at a time.\n- 21.5-27.4s: read the facts plainly and kindly, with a light stress on \"وحدة\" and a small beat before \"أسبوعين\". \"وحقها كم؟\" is a light, friendly question, then a beat before \"قدر خمسين دولار.\" Do not oversell the price.\n- 27.4-32.0s: say \"زي زمان\" with a smile (it echoes \"ما زي زمان\"), pause on the \"..\", then say \"ساهموا معانا بحقيبة\" softly and slowly. This is the single clear ask.\n- 32.0-36.4s: \"وما ضروري تشيلوها براكم\" should sound reassuring, not instructive.\n- 36.4-44.5s, the payment lines: short, calm, unhurried. Leave space so the cards breathe under the music, and don't rush to fill the silence.\n- 44.5s: say \"صوروا الشاشة..\" as the all-details frame lands. This is the only screenshot cue in the video.\n- After \"في الواتساب\" (about 48.0s), stop for about half a second of music swell.\n- 48.5-57.0s, the proverb, is the slowest and most heartfelt read. Pause at the \"..\" after \"زول واحد\". Read the second half (51.5-57.0) as one phrase with no break after \"كتيرة\", and land softly on \"والعطاء\" at about 56.5s as the music resolves. Finish by 57.0; no talking over the end card.\n\nMUSIC (no sound effects at all): warm oud or nylon guitar with a Sudanese pentatonic feel and soft hand percussion. It thins out and cools at 9.7s, rebuilds from 17.0s, swells at about 48.0s, resolves under the proverb so the resolution lands on \"والعطاء\", and holds on the end card.\n\nPRODUCTION:\n- Burn in Arabic subtitles of the VO, using Sudanese spelling (دي/دا/كدا). In the subtitles and every on-screen instance, write مرّقوا with a shadda, and write \"قدُر خمسين دولار\" with a damma, so silent viewers do not read مَرَقوا ('they went out') or قِدر/قَدَر.\n- Use Western digits only, with no digit shaping. Set every phone number, the IBAN and the SWIFT code as left-to-right isolated runs, so the plus sign shows on the left of +201001510986, and never split or wrap the IBAN.\n- Keep the routing headings (بالجنيه السوداني، بالجنيه المصري، التحويل من خارج مصر) on the all-details frame and on the end card.\n- Use a font that clearly separates 0/O and 1/I/l.\n- Before export, check the 36.4, 39.1, 41.5, 44.5 and 57.0 frames against the fact sheet one character at a time.\n- Put the full payment details in the post caption as well.",
+  "confirm_with_organisers": [
+    "Bag contents: the VO does not name the items. The basket visual shows what the poster photo shows (sacks of grains/legumes, rice, cooking oil, canned goods, dates). Confirm that is representative. If you give the exact contents in writing, we can add a named list on screen.",
+    "Pooling: 'لموا حقها مع الأهل والحبان' / 'اعملوها نفير' invites a group to pool the 50 dollars and send one transfer for one bag. Is that fine, and do you also accept amounts smaller than a full bag? If you would rather not invite pooling, we will swap in 'ورسلوا الفيديو لقروب العيلة' (share the video with the family group).",
+    "Where the bags go: the title card says 'لأهلنا في السودان' (for our people in Sudan). Confirm the bags are distributed inside Sudan and not, for example, to displaced families in Egypt.",
+    "War mention: there is one short, non-political line, 'لكن من قامت الحرب، ناس كتار من أهلنا خلوا بيوتهم'. Are you comfortable with it? A same-length fallback with no war mention is 'لكن الأيام صعبت، وناس كتار من أهلنا خلوا بيوتهم'.",
+    "First person and family tag: the VO now speaks from inside the family ('ساهموا معانا بحقيبة' = contribute a bag with us; 'رسلوا لينا الإشعار' = send us the receipt). Is that right, given viewers are sending money to personal names? If you would rather the speaker stays outside the 'we', we will use 'ساهموا بحقيبة' and 'رسلوا الإشعار'. Do you also want a small on-screen tag under the title, such as 'مبادرة أسرية' or 'من شباب وبنات العيلة'? A slot is reserved for it but stays empty until you confirm the wording.",
+    "Names on screen: confirm you are happy for وثام محمد هاشم، عالية محمد هاشم، هبه جبرالله محمد خير and Hiba Gabralla Mohamed Khair to appear in a widely forwarded video. Confirm the spellings as well (هبه vs هبة, جبرالله).",
+    "Western Union: the poster gives no receiver name or country. The VO does not mention it, and the screen shows only 'أو ويسترن يونيون'. Send us the receiver's full name and country if you want it to be usable.",
+    "Currency and validity: confirm the 50-dollar cost and all accounts (Bankak, Fawry, InstaPay, IBAN/SWIFT, WhatsApp) are current for Ramadan 1448, which is expected to begin around 7-8 February 2027 depending on the moon sighting. The VO says 'رمضان دا' (this coming Ramadan), so it fits a post going out before or during Ramadan 1448. Do you want SDG/EGP equivalents on screen?",
+    "End card: confirm you are happy to repeat the WhatsApp number and the full payment block, with its currency headings, on the final frame and in the post caption.",
+    "Voice: who will record it? A Sudanese family member, ideally a warm female voice, is strongly preferred over a generic or TTS voice, and it fits the first-person lines."
+  ],
+  "synthesis_rationale": "SPINE: The nostalgia draft has the strongest hook and structure. All three lenses named 'فاكرين ريحة عواسة الحلو مر في الحوش؟' and the tray line among their strongest lines, and the tray (صينية) gives one thread from memory to loss to action to payoff. The thread is tightened with an echo: 'صينيتهم ما زي زمان' (the loss) becomes 'زي زمان، مرّقوا صينيتكم' (the ask). The ending cuts back to the dara (the outdoor iftar spot), where many trays are set down together as the proverb's 'قلوب كتيرة' (many hearts) plays.\n\nGRAFTS (unchanged): from the nafeer draft, the pooling line 'وما ضروري تشيلوها براكم، لموا حقها مع الأهل والحبان' with 'اعملوها نفير' on screen, setting up 'مال زول واحد' in the proverb, and the door-and-mat dignity visual. From the direct draft, the screenshot instruction and a single still all-details frame. From earlier reviews, 'وحقها كم؟ قدر', 'ولا' for 'or', and بالسوداني/بالمصري.\n\nTHIS REVISION:\n- Timing (both major issues): the two proposed retimes conflicted, so they were merged. Pace is now planned in syllables per second rather than words per second. Slack came from the payment beats and from trimming the family list. The proverb's second half now has 5.5s (51.5-57.0, about 4.2 syllables per second), the ask 4.6s (27.4-32.0, about 5.2), and the hope turn with the first spoken name 4.5s (17.0-21.5, about 4.9). The music swell is now about half a second at 48.0s. The family list and the 'ورمضان دا' line are lighter, so the hook and the loss beats are no longer crowded. Every beat runs 2.4-4.6s except the proverb's 5.5s, which is a deliberate exception so the emotional payoff is not rushed. Total is exactly 0-60, and the frame-check list was updated to 36.4, 39.1, 41.5, 44.5 and 57.0.\n- Dialect: 'كتير من أهلنا' became 'ناس كتار من أهلنا' in the VO, on screen and in the fallback. 'ترجع تتملى' became 'تتملى تاني' and the leading و was dropped. 'ساهموا' became 'ساهموا معانا'. 'الحقيبة بتكفي' became 'حقيبة وحدة بتكفي', which keeps the brand word, stresses one bag, and avoids the ambiguity where 'بتكفي' alone could refer to the initiative. 'بعد التحويل' is gone. Pronunciation notes were fixed: تتملى = titmala, with guidance for اجتمعت and العطاء. الحبوبة is no longer spoken, so its note was removed; she stays in the visual. On screen and in subtitles, مرّقوا has a shadda and قدُر has a damma.\n- Facts: 'أسبوعين كاملين' became 'أسبوعين', matching the poster's 'لفترة أسبوعين', and the confirm item about it was dropped. 'من أي بلد برا مصر' became 'ولو من برا مصر', mirroring 'التحويل من خارج مصر' without implying every country can send. The routing headings are now on the end card, so a single saved frame still shows which route is for which currency.\n- Persuasion and dignity: the family list is now 'ولمة الأهل.. والشفع مترجين المغرب'. 'والسنة دي، بيوت كتيرة صينيتها' became 'ورمضان دا، صينيتهم ما زي زمان', which avoids repeating بيوت/كتيرة, saves 'كتيرة' for the proverb, and pins the timing to the coming Ramadan. The screenshot cue moved from the Sudanese-pound card to the all-details frame ('صوروا الشاشة.. ورسلوا لينا الإشعار في الواتساب'), so Gulf and Egypt viewers capture the right frame. The first-person 'معانا/لينا' adds warmth and answers 'منو ديل؟'. A family tag slot is reserved pending confirmation.\n\nHARD CONSTRAINTS: 109 spoken words. The only numbers spoken are 'ستة' and 'خمسين دولار', the core poster facts; no account, phone, IBAN or SWIFT number is read aloud. Every on-screen payment string is copied character for character from the fact sheet. 'تكلفة الحقيبة ما يعادل 50 دولار' and 'لأسرة 6 أفراد لفترة أسبوعين' match the poster verbatim. The last spoken words are the poster proverb, word for word, split across two beats. VO text is plain script; diacritics appear only in on-screen and subtitle text.\n\nACCEPTED TRADE-OFFS: The payment cards are each alone on screen for only 2.4-3.0s. They dock rather than leave, viewers are told to screenshot only on the 4.0s all-details frame, and the 3s end card repeats everything. The uncles card is now a silent visual. The pooling line keeps its words and runs at about 5.5 syllables per second, the densest line in the script but still normal speech."
+}
