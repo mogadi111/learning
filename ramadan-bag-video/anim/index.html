@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مبادرة حقيبة رمضان</title>
+<link rel="stylesheet" href="node_modules/@fontsource/lalezar/index.css">
+<link rel="stylesheet" href="node_modules/@fontsource/tajawal/500.css">
+<link rel="stylesheet" href="node_modules/@fontsource/tajawal/700.css">
+<link rel="stylesheet" href="node_modules/@fontsource/tajawal/800.css">
+<link rel="stylesheet" href="node_modules/@fontsource/jetbrains-mono/700.css">
+<style>
+  :root {
+    --emerald: #0c5a3c;
+    --emerald-deep: #063826;
+    --gold: #e8c46a;
+    --gold-deep: #b9852a;
+    --cream: #fff6dc;
+    --ink: #1c2a22;
+  }
+  html, body { margin: 0; background: #000; }
+  #stage {
+    position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    perspective: 1800px; perspective-origin: 50% 45%;
+    font-family: 'Tajawal', sans-serif; color: var(--cream);
+    background: #0b1530;
+  }
+  .abs { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; will-change: transform, opacity; }
+  .full { width: 1080px; height: 1920px; }
+  .cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* gold text */
+  .gold {
+    display: inline-block; padding: 0 .08em;
+    background: linear-gradient(180deg, #fff7d6 0%, #f6d886 38%, #d9a441 70%, #a8711f 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 0 rgba(70, 35, 0, .55)) drop-shadow(0 10px 22px rgba(0, 0, 0, .45));
+  }
+  .creamtxt { color: var(--cream); text-shadow: 0 3px 0 rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.55); }
+
+  /* glass card that frames an image */
+  .glass {
+    border-radius: 64px; padding: 18px; box-sizing: border-box;
+    background: linear-gradient(160deg, rgba(255,250,235,.30), rgba(255,250,235,.08));
+    border: 3px solid rgba(240, 206, 122, .85);
+    box-shadow: 0 50px 110px rgba(0,0,0,.50), inset 0 2px 0 rgba(255,255,255,.45), inset 0 -2px 0 rgba(0,0,0,.15);
+    backdrop-filter: blur(22px) saturate(140%);
+  }
+  .glass .inner { width: 100%; height: 100%; border-radius: 48px; overflow: hidden; position: relative; background: #2a1a10; }
+  .glass .inner img { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 50% 50%; }
+  .sheen { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+    background: linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,240,200,.38) 50%, rgba(255,255,255,0) 65%);
+    background-size: 300% 100%; background-position: 150% 0; }
+
+  /* caption pill */
+  .cap {
+    padding: 22px 54px 30px; border-radius: 48px; white-space: nowrap; text-align: center;
+    background: linear-gradient(160deg, rgba(10,70,48,.78), rgba(4,36,24,.86));
+    border: 3px solid rgba(240,206,122,.9);
+    box-shadow: 0 24px 60px rgba(0,0,0,.45), inset 0 2px 0 rgba(255,255,255,.25);
+    backdrop-filter: blur(16px);
+    font-family: 'Lalezar', sans-serif; font-size: 74px; line-height: 1.25;
+  }
+  .cap.sm { font-size: 60px; }
+
+  /* emerald panel */
+  .panel {
+    border-radius: 56px; box-sizing: border-box; text-align: center;
+    background: linear-gradient(165deg, rgba(16,104,70,.92), rgba(5,48,32,.95));
+    border: 5px solid var(--gold);
+    box-shadow: 0 50px 120px rgba(0,0,0,.55), inset 0 0 0 10px rgba(6,40,26,.6), inset 0 0 0 13px rgba(232,196,106,.55);
+  }
+
+  /* payment cards */
+  .pay {
+    width: 940px; border-radius: 48px; overflow: hidden; box-sizing: border-box;
+    background: linear-gradient(170deg, rgba(255,250,236,.97), rgba(250,238,208,.97));
+    border: 4px solid var(--gold);
+    box-shadow: 0 40px 100px rgba(0,0,0,.5), inset 0 2px 0 #fff;
+    color: var(--ink);
+  }
+  .pay .hd {
+    height: 112px; display: flex; align-items: center; justify-content: center; gap: 22px;
+    background: linear-gradient(170deg, #127a52, #075034); color: var(--cream);
+    font-family: 'Tajawal'; font-weight: 800; font-size: 50px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .pay .row { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 26px 30px 22px; }
+  .pay .row + .row { border-top: 3px dashed rgba(185,133,42,.45); }
+  .pay .method { font-family: 'Tajawal'; font-weight: 800; font-size: 48px; color: var(--emerald); line-height: 1; }
+  .pay .num {
+    direction: ltr; unicode-bidi: isolate; font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 64px; letter-spacing: 2px; line-height: 1; padding: 14px 40px 12px; border-radius: 999px;
+    background: linear-gradient(180deg, #fbe7a6, #e9c062); color: #2b1d05;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 6px 14px rgba(120,80,10,.3);
+  }
+  .pay .who { font-family: 'Tajawal'; font-weight: 700; font-size: 44px; color: #2b3a31; line-height: 1.1; }
+  .pay .ltr { direction: ltr; unicode-bidi: isolate; text-align: left; font-family: 'Tajawal'; font-weight: 700; font-size: 37px; line-height: 1.42; color: #22312a; padding: 20px 34px 8px; }
+  .pay .ltr .k { color: var(--emerald); font-weight: 800; }
+  .pay .mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 37px; }
+  .pay .iban { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 37px; letter-spacing: .5px; color: #2b1d05;
+    background: linear-gradient(180deg, #fbe7a6, #e9c062); border-radius: 18px; padding: 8px 16px; display: inline-block; white-space: nowrap; }
+  .pay .ft { text-align: center; font-family: 'Tajawal'; font-weight: 800; font-size: 44px; color: var(--emerald); padding: 4px 0 26px; }
+
+  .chip {
+    padding: 18px 44px 22px; border-radius: 999px; white-space: nowrap;
+    background: linear-gradient(160deg, rgba(255,250,235,.32), rgba(255,250,235,.10));
+    border: 3px solid rgba(240,206,122,.9); backdrop-filter: blur(14px);
+    font-family: 'Lalezar'; font-size: 64px; box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  }
+  .wa {
+    display: flex; align-items: center; gap: 22px; padding: 18px 40px; border-radius: 999px; white-space: nowrap;
+    background: linear-gradient(170deg, #1fae5a, #128c45); border: 4px solid var(--gold);
+    box-shadow: 0 24px 60px rgba(0,0,0,.45); color: #fff;
+  }
+  .wa .t { font-family: 'Tajawal'; font-weight: 800; font-size: 44px; }
+  .wa .n { direction: ltr; unicode-bidi: isolate; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 52px; }
+
+  #flash { background: #fff; }
+  #tint { background: linear-gradient(180deg, rgba(10,25,60,.55), rgba(20,35,70,.35)); }
+  #vignette { background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%); }
+  #topshade { background: linear-gradient(180deg, rgba(5,10,30,.82) 0%, rgba(5,10,30,.45) 30%, rgba(5,10,30,0) 50%); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- background layers -->
+  <div class="abs full" id="bgWrap"><img class="cover" id="bg" src="assets/bg-dusk.jpg"></div>
+  <div class="abs full" id="tint"></div>
+  <div class="abs full" id="commWrap"><img class="cover" id="comm" src="assets/community.jpg"></div>
+  <div class="abs full" id="topshade"></div>
+  <canvas class="abs" id="particles" width="1080" height="1920"></canvas>
+
+  <!-- S1-S2 main card (flips between hilu-mur and dara) -->
+  <div class="abs glass" id="cardA" style="width:860px;height:1120px"><div class="inner"><img src="assets/hilumur.jpg"><div class="sheen"></div></div></div>
+  <div class="abs glass" id="cardB" style="width:860px;height:1120px"><div class="inner"><img src="assets/dara.jpg"><div class="sheen"></div></div></div>
+
+  <!-- S3 family fan -->
+  <div class="abs glass" id="fanMen" style="width:560px;height:746px;padding:14px;border-radius:52px"><div class="inner" style="border-radius:40px"><img src="assets/men.jpg"></div></div>
+  <div class="abs glass" id="fanKids" style="width:560px;height:746px;padding:14px;border-radius:52px"><div class="inner" style="border-radius:40px"><img src="assets/kids.jpg"></div></div>
+  <div class="abs glass" id="fanGran" style="width:560px;height:746px;padding:14px;border-radius:52px"><div class="inner" style="border-radius:40px"><img src="assets/grandma.jpg"></div></div>
+
+  <!-- S4-S6 -->
+  <div class="abs glass" id="cardDoor" style="width:860px;height:1120px"><div class="inner"><img src="assets/door.jpg"></div></div>
+  <div class="abs glass" id="cardSparse" style="width:860px;height:860px"><div class="inner"><img src="assets/tray-sparse.jpg"></div></div>
+  <div class="abs glass" id="cardFull" style="width:860px;height:860px"><div class="inner"><img src="assets/tray-full.jpg"><div class="sheen"></div></div></div>
+
+  <div class="abs" id="bloom" style="width:1100px;height:1100px;border-radius:50%;mix-blend-mode:screen;background:radial-gradient(circle, rgba(255,238,195,.95) 0%, rgba(255,208,125,.55) 30%, rgba(255,190,90,0) 68%)"></div>
+  <div class="abs panel" id="titlePanel" style="width:960px;height:430px;padding-top:58px">
+    <div class="gold" style="font-family:'Lalezar';font-size:132px;line-height:1.15">مبادرة حقيبة رمضان</div>
+    <div class="creamtxt" style="font-weight:800;font-size:58px;margin-top:6px">لأهلنا في السودان</div>
+  </div>
+  <svg class="abs" id="sparkles" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+
+  <!-- S7 basket, family, two weeks -->
+  <div class="abs" id="pedestal" style="width:640px;height:150px;border-radius:50%;
+       background:radial-gradient(ellipse at 50% 40%, rgba(255,246,220,.55), rgba(255,246,220,.10) 70%);
+       border:3px solid rgba(240,206,122,.8); box-shadow:0 30px 60px rgba(0,0,0,.45), inset 0 3px 0 rgba(255,255,255,.5)"></div>
+  <img class="abs" id="basket" src="assets/basket.png" style="width:560px;height:560px;object-fit:contain">
+  <svg class="abs" id="house" width="760" height="420" viewBox="0 0 760 420"></svg>
+  <svg class="abs" id="weeks" width="900" height="220" viewBox="0 0 900 220"></svg>
+
+  <!-- S8 price -->
+  <div class="abs panel" id="priceCard" style="width:820px;height:560px;padding-top:30px;
+       background:linear-gradient(165deg, rgba(255,250,236,.96), rgba(248,234,200,.96)); color:var(--ink)">
+    <div style="display:flex;justify-content:center;align-items:baseline;gap:26px;direction:rtl">
+      <span class="gold" id="fifty" style="font-family:'Lalezar';font-size:300px;line-height:1;direction:ltr;display:inline-block">50</span>
+      <span style="font-family:'Lalezar';font-size:120px;color:var(--emerald)">دولار</span>
+    </div>
+    <div style="font-weight:800;font-size:54px;color:var(--emerald-deep);margin-top:4px">تكلفة الحقيبة ما يعادل 50 دولار</div>
+  </div>
+
+  <!-- S9-S10 -->
+  <div class="abs glass" id="cardHands" style="width:860px;height:1120px"><div class="inner"><img src="assets/hands-tray.jpg"><div class="sheen"></div></div></div>
+  <img class="abs" id="miniBasket" src="assets/basket.png" style="width:380px;height:380px;object-fit:contain">
+  <div class="abs glass" id="cardNafeer" style="width:860px;height:1120px"><div class="inner"><img src="assets/nafeer.jpg"><div class="sheen"></div></div></div>
+  <div class="abs chip" id="chipAhl"><span class="gold">الأهل</span></div>
+  <div class="abs chip" id="chipHub"><span class="gold">الحبان</span></div>
+
+  <!-- S11-S16 payment cards -->
+  <div class="abs pay" id="payINT">
+    <div class="hd"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" stroke="#fff6dc" stroke-width="3.5"><circle cx="29" cy="29" r="25"/><ellipse cx="29" cy="29" rx="11" ry="25"/><line x1="4" y1="29" x2="54" y2="29"/><path d="M8 16 H50 M8 42 H50"/></svg><span>التحويل من خارج مصر</span></div>
+    <div class="ltr">
+      <div><span class="k">IBAN</span></div>
+      <div><span class="iban">EG91 0030 2552 0000 0100 0012 9111 2</span></div>
+      <div><span class="k">Bank:</span> Abu Dhabi Islamic Bank - Egypt</div>
+      <div><span class="k">Account name:</span> Hiba Gabralla Mohamed Khair</div>
+      <div><span class="k">Currency:</span> USD &nbsp;&nbsp; <span class="k">SWIFT code:</span> <span class="mono">ABDIEGCA</span></div>
+    </div>
+    <div class="ft">أو ويسترن يونيون <span style="direction:ltr;unicode-bidi:isolate;font-size:38px;color:#2b3a31">(Western Union)</span></div>
+  </div>
+  <div class="abs pay" id="payEG">
+    <div class="hd"><svg width="84" height="56" viewBox="0 0 84 56"><rect width="84" height="19" fill="#CE1126"/><rect y="19" width="84" height="18" fill="#fff"/><rect y="37" width="84" height="19" fill="#000"/><circle cx="42" cy="28" r="6.5" fill="#C09300"/></svg><span>بالجنيه المصري</span></div>
+    <div class="row"><div class="method">انستا باي</div><div class="num">01556578356</div><div class="who">هبه جبرالله محمد خير</div></div>
+  </div>
+  <div class="abs pay" id="paySD">
+    <div class="hd"><svg width="84" height="56" viewBox="0 0 84 56"><rect width="84" height="19" fill="#D21034"/><rect y="19" width="84" height="18" fill="#fff"/><rect y="37" width="84" height="19" fill="#000"/><polygon points="0,0 34,28 0,56" fill="#007229"/></svg><span>بالجنيه السوداني</span></div>
+    <div class="row"><div class="method">بنكك</div><div class="num">1705155</div><div class="who">وثام محمد هاشم</div></div>
+    <div class="row"><div class="method">فوري</div><div class="num">51326349</div><div class="who">عالية محمد هاشم</div></div>
+  </div>
+  <div class="abs wa" id="waChip">
+    <svg width="70" height="70" viewBox="0 0 70 70"><path d="M35 6a28 28 0 0 0-24 42.5L7 63l15-4a28 28 0 1 0 13-53z" fill="#fff"/><path d="M25 22c2-1 4 0 4.5 2l1.5 4c.5 1.5-.5 2.5-1.5 3.5 2 4 5 7 9 9 1-1 2-2 3.5-1.5l4 1.5c2 .5 3 2.5 2 4.5-1.5 3-5 4-8 3-9-3-15-9-18-18-1-3 0-6.5 3-8z" fill="#1a9e50"/></svg>
+    <span class="t">تحويل الإشعار</span><span class="n">+201001510986</span>
+  </div>
+  <div class="abs chip" id="shotChip" style="display:flex;align-items:center;gap:20px">
+    <svg width="76" height="62" viewBox="0 0 76 62"><rect x="3" y="12" width="70" height="47" rx="12" fill="none" stroke="#f3d27a" stroke-width="5"/><path d="M24 12l6-9h16l6 9" fill="none" stroke="#f3d27a" stroke-width="5" stroke-linejoin="round"/><circle cx="38" cy="35" r="13" fill="none" stroke="#f3d27a" stroke-width="5"/></svg>
+    <span class="gold">صوّروا الشاشة</span>
+  </div>
+
+  <!-- proverb + end card -->
+  <div class="abs" id="prov1" style="width:1000px;text-align:center"><div class="creamtxt" style="font-family:'Lalezar';font-size:92px;line-height:1.2">الخير ما بكتر بمال زول واحد</div></div>
+  <div class="abs" id="prov2" style="width:1000px;text-align:center"><div class="gold" style="font-family:'Lalezar';font-size:104px;line-height:1.2">الخير بكتر بقلوب كتيرة</div></div>
+  <div class="abs" id="prov3" style="width:1000px;text-align:center"><div class="creamtxt" style="font-family:'Lalezar';font-size:78px;line-height:1.2">اجتمعت على المحبة والعطاء</div></div>
+
+  <div class="abs" id="endTitle" style="width:1000px;text-align:center">
+    <div class="gold" style="font-family:'Lalezar';font-size:112px;line-height:1.1">مبادرة حقيبة رمضان</div>
+    <div class="creamtxt" style="font-family:'Lalezar';font-size:62px;margin-top:4px">ساهموا معانا بحقيبة</div>
+  </div>
+
+  <!-- captions -->
+  <div class="abs cap" id="cap1"><span class="gold">فاكرين ريحة الحلو مُر؟</span></div>
+  <div class="abs cap" id="cap2"><span class="gold">البروش.. والصواني في الشارع</span></div>
+  <div class="abs cap" id="cap3"><span class="gold">لمّة الأهل</span></div>
+  <div class="abs cap sm" id="cap4"><span class="gold">كتير من أهلنا خلّوا بيوتهم</span></div>
+  <div class="abs cap" id="cap5"><span class="gold">صينيتهم.. ما زي زمان</span></div>
+  <div class="abs cap sm" id="cap7"><span class="gold">لأسرة 6 أفراد لفترة أسبوعين</span></div>
+  <div class="abs cap sm" id="cap9a"><span class="gold">زي زمان.. شاركوا صينيتكم</span></div>
+  <div class="abs cap" id="cap9b"><span class="gold">وساهموا معانا بحقيبة</span></div>
+  <div class="abs cap sm" id="cap10"><span class="gold">اعملوها نفير.. مع الأهل والحبان</span></div>
+
+  <!-- guide lantern -->
+  <div class="abs" id="lanternGlow" style="width:560px;height:560px;border-radius:50%;
+       background:radial-gradient(circle, rgba(255,196,96,.62) 0%, rgba(255,170,60,.25) 35%, rgba(255,160,40,0) 68%)"></div>
+  <img class="abs" id="lantern" src="assets/lantern.png" style="width:190px;height:285px;object-fit:contain">
+
+  <!-- frame + overlays -->
+  <svg class="abs" id="frame" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+  <div class="abs full" id="vignette"></div>
+  <div class="abs full" id="flash"></div>
+</div>
+
+<script>
+'use strict';
+const W = 1080, H = 1920, DURATION = 60;
+const $ = id => document.getElementById(id);
+
+/* ---------- math ---------- */
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const E = {
+  lin: x => x,
+  out: x => 1 - Math.pow(1 - x, 3),
+  in: x => x * x * x,
+  inOut: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  backSoft: x => { const c1 = 1.1, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  elastic: x => x === 0 ? 0 : x === 1 ? 1 : Math.pow(2, -9 * x) * Math.sin((x * 9 - .75) * (2 * Math.PI) / 3.2) + 1,
+};
+// piecewise keyframes: [[t, {props}], ...], each segment eased by the destination key's ease
+function keys(t, list) {
+  if (t <= list[0][0]) return { ...list[0][1] };
+  for (let i = 1; i < list.length; i++) {
+    const [t1, v1, ease] = list[i];
+    const [t0, v0] = list[i - 1];
+    if (t <= t1) {
+      const p = (E[ease] || E.inOut)(prog(t, t0, t1));
+      const o = {};
+      for (const k in v1) o[k] = lerp(v0[k] ?? v1[k], v1[k], p);
+      for (const k in v0) if (!(k in o)) o[k] = v0[k];
+      return o;
+    }
+  }
+  return { ...list[list.length - 1][1] };
+}
+// in/out envelope: returns 0..1..0
+function env(t, a, b, fin = .5, fout = .5, ein = 'out', eout = 'inOut') {
+  if (t < a || t > b) return 0;
+  const pi = fin > 0 ? (E[ein])(prog(t, a, a + fin)) : 1;
+  const po = fout > 0 ? 1 - (E[eout])(prog(t, b - fout, b)) : 1;
+  return Math.min(pi, po);
+}
+
+/* ---------- element posing ---------- */
+const size = {};
+function measure(el) {
+  if (!size[el.id]) size[el.id] = el instanceof SVGElement
+    ? { w: +el.getAttribute('width'), h: +el.getAttribute('height') }
+    : { w: el.offsetWidth, h: el.offsetHeight };
+  return size[el.id];
+}
+function pose(id, p) {
+  const el = typeof id === 'string' ? $(id) : id;
+  const { w, h } = measure(el);
+  const o = p.o ?? 1;
+  if (o <= 0.001) { el.style.visibility = 'hidden'; el.style.opacity = 0; return; }
+  el.style.visibility = 'visible';
+  el.style.opacity = o;
+  const s = p.s ?? 1;
+  el.style.transform =
+    `translate3d(${(p.x ?? W / 2) - w / 2}px, ${(p.y ?? H / 2) - h / 2}px, ${p.z ?? 0}px) ` +
+    `rotateX(${p.rx ?? 0}deg) rotateY(${p.ry ?? 0}deg) rotateZ(${p.rz ?? 0}deg) scale(${p.sx ?? s}, ${p.sy ?? s})`;
+  el.style.filter = p.f ?? '';
+  if (p.clip !== undefined) el.style.clipPath = p.clip;
+}
+function hide(...ids) { ids.forEach(id => pose(id, { o: 0 })); }
+function kb(id, t, a, b, s0 = 1, s1 = 1.1) { // ken burns on inner image
+  const img = $(id).querySelector('img');
+  img.style.transform = `scale(${lerp(s0, s1, E.inOut(prog(t, a, b)))})`;
+}
+function sheen(id, t, at, dur = .9) {
+  const el = $(id).querySelector('.sheen');
+  if (!el) return;
+  el.style.backgroundPosition = `${lerp(150, -50, E.inOut(prog(t, at, at + dur)))}% 0`;
+}
+// RTL wipe reveal for text (reveals from the right edge)
+const wipe = p => `inset(-30% -10% -30% ${lerp(105, -10, E.out(p))}%)`;
+
+/* ---------- caption helper ---------- */
+const CAP_Y = 1520;
+function caption(id, t, a, b, y = CAP_Y) {
+  const e = env(t, a, b, .55, .35);
+  if (e <= 0) return hide(id);
+  const pin = prog(t, a, a + .55);
+  pose(id, { x: W / 2, y: y + (1 - E.back(pin)) * 60, o: Math.min(1, e * 1.4), s: lerp(.9, 1, E.back(pin)),
+             clip: wipe(prog(t, a + .05, a + .75)) });
+}
+
+/* ---------- static decorations ---------- */
+function buildFrame() {
+  const s = $('frame'); let g = '';
+  const star = (cx, cy, r, op) => {
+    const pts = [];
+    for (let i = 0; i < 16; i++) { const a = Math.PI / 8 * i - Math.PI / 2; const rr = i % 2 ? r * .52 : r; pts.push((cx + rr * Math.cos(a)).toFixed(1) + ',' + (cy + rr * Math.sin(a)).toFixed(1)); }
+    return `<polygon points="${pts.join(' ')}" fill="none" stroke="#e8c46a" stroke-width="2.4" opacity="${op}"/>`;
+  };
+  for (let x = 30; x <= 1050; x += 60) { g += star(x, 34, 20, .75); g += star(x, 1886, 20, .75); }
+  g += `<rect x="22" y="70" width="1036" height="1780" rx="46" fill="none" stroke="#e8c46a" stroke-width="3" opacity=".55"/>`;
+  g += `<rect x="34" y="82" width="1012" height="1756" rx="38" fill="none" stroke="#e8c46a" stroke-width="1.2" opacity=".35"/>`;
+  s.innerHTML = `<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient></defs>
+    <rect width="1080" height="70" fill="url(#fg)"/><rect y="1850" width="1080" height="70" fill="url(#fg)" transform="rotate(180 540 1885)"/>` + g;
+}
+function personPath(x, base, hgt) { // simple rounded person icon
+  const head = hgt * .2, bodyW = hgt * .42, bodyH = hgt * .6;
+  return `<circle cx="${x}" cy="${base - bodyH - head * 1.15}" r="${head}" />
+          <path d="M${x - bodyW / 2} ${base} v-${bodyH * .62} a${bodyW / 2} ${bodyH * .38} 0 0 1 ${bodyW} 0 v${bodyH * .62} z" />`;
+}
+function buildHouse() {
+  const s = $('house');
+  const heights = [190, 150, 120, 175, 135, 110];
+  let people = '';
+  heights.forEach((hh, i) => {
+    const x = 145 + i * 94;
+    people += `<g class="pp" id="pp${i}" style="transform-origin:${x}px 380px">
+      <g fill="rgba(255,246,220,.92)" stroke="#e8c46a" stroke-width="4">${personPath(x, 380, hh)}</g></g>`;
+  });
+  s.innerHTML = `
+    <path id="houseLine" d="M40 400 V190 L380 30 L720 190 V400 Z" fill="rgba(255,246,220,.12)" stroke="#e8c46a" stroke-width="7" stroke-linejoin="round"/>
+    ${people}`;
+}
+function lanternImg(cx, cy, w) {
+  const h = w * 1.5;
+  return `<image class="lg" href="assets/lantern.png" x="${cx - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" />`;
+}
+function lanternIcon(cx, cy, k) {
+  return `<g transform="translate(${cx},${cy}) scale(${k})">
+    <path d="M-6 -44 h12 v8 h-12z" fill="#e8c46a"/>
+    <path d="M-20 -36 h40 l-6 10 h-28z" fill="#e8c46a"/>
+    <rect class="lg" x="-18" y="-26" width="36" height="46" rx="8" />
+    <path d="M-22 20 h44 l-8 12 h-28z" fill="#e8c46a"/>
+  </g>`;
+}
+function buildWeeks() {
+  const s = $('weeks'); let g = '';
+  for (let r = 0; r < 2; r++) for (let c = 0; c < 7; c++) {
+    const i = r * 7 + c;
+    g += `<g id="wk${i}">${lanternImg(108 + c * 114, 52 + r * 106, 62)}</g>`;
+  }
+  s.innerHTML = g;
+}
+function setWeeks(t, a) {
+  for (let i = 0; i < 14; i++) {
+    const p = prog(t, a + i * .05, a + i * .05 + .25);
+    const rect = $('wk' + i).querySelector('.lg');
+    const lit = E.out(p);
+    rect.style.filter = `grayscale(${1 - lit}) brightness(${lerp(.45, 1.15, lit)}) drop-shadow(0 0 ${lit * 14}px rgba(255,182,64,${lit}))`;
+    rect.style.opacity = lerp(.55, 1, lit);
+    $('wk' + i).style.transform = `translateY(${-(Math.sin(Math.PI * p) * 12)}px)`;
+    $('wk' + i).style.transformBox = 'fill-box';
+  }
+}
+
+/* ---------- particles (deterministic) ---------- */
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const P = Array.from({ length: 70 }, () => ({ x: rnd() * W, y: rnd() * H, r: 2 + rnd() * 9, v: 12 + rnd() * 38, ph: rnd() * 6.28, sw: 10 + rnd() * 30 }));
+function drawParticles(t, warm) {
+  const c = $('particles').getContext('2d');
+  c.clearRect(0, 0, W, H);
+  for (const p of P) {
+    const y = ((p.y - p.v * t) % H + H) % H;
+    const x = p.x + Math.sin(t * .6 + p.ph) * p.sw;
+    const a = (.25 + .35 * (.5 + .5 * Math.sin(t * 1.7 + p.ph))) * lerp(.35, 1, warm);
+    const g = c.createRadialGradient(x, y, 0, x, y, p.r * 2.2);
+    g.addColorStop(0, `rgba(255,214,140,${a})`); g.addColorStop(1, 'rgba(255,190,90,0)');
+    c.fillStyle = g; c.beginPath(); c.arc(x, y, p.r * 2.2, 0, 6.283); c.fill();
+  }
+}
+
+/* ---------- sparkles (kept outside the title panel so they never sit on letters) ---------- */
+function drawSparkles(t, a, cx, cy) {
+  const s = $('sparkles'); let g = '';
+  if (t > a && t < a + 2.4) {
+    for (let i = 0; i < 16; i++) {
+      const ang = i * 2.399;
+      const p = prog(t, a + i * .07, a + i * .07 + .9);
+      if (p <= 0 || p >= 1) continue;
+      const k = Math.sin(Math.PI * p) * (12 + (i % 3) * 7);
+      const rr = 1 + (i % 4) * .05;
+      const x = cx + Math.cos(ang) * 525 * rr, y = cy + Math.sin(ang) * 255 * rr;
+      g += `<path d="M${x} ${y - k} Q${x} ${y} ${x + k} ${y} Q${x} ${y} ${x} ${y + k} Q${x} ${y} ${x - k} ${y} Q${x} ${y} ${x} ${y - k}Z" fill="#fff1c2" opacity="${Math.sin(Math.PI * p)}"/>`;
+    }
+  }
+  s.innerHTML = g;
+}
+
+/* ---------- lantern guide ---------- */
+const LANTERN = [
+  [0.0, { x: 860, y: 40, s: 1, b: 1 }],
+  [0.6, { x: 860, y: 250, s: 1, b: 1 }, 'elastic'],
+  [3.6, { x: 860, y: 250, s: 1, b: 1 }],
+  [4.6, { x: 210, y: 280, s: 1, b: 1 }, 'back'],
+  [6.7, { x: 230, y: 270, s: 1, b: 1 }],
+  [7.4, { x: 540, y: 205, s: .85, b: 1.05 }, 'back'],
+  [9.6, { x: 540, y: 205, s: .85, b: 1 }],
+  [10.8, { x: 840, y: 240, s: .8, b: .42 }, 'inOut'],
+  [16.9, { x: 840, y: 250, s: .8, b: .42 }],
+  [17.3, { x: 540, y: 300, s: 1.45, b: 1.6 }, 'back'],
+  [17.95, { x: 540, y: 250, s: 1, b: 1.15 }, 'out'],
+  [21.4, { x: 540, y: 250, s: 1, b: 1.1 }],
+  [22.1, { x: 880, y: 300, s: .9, b: 1 }, 'back'],
+  [24.9, { x: 880, y: 300, s: .9, b: 1 }],
+  [25.35, { x: 760, y: 425, s: .9, b: 1.3 }, 'in'],
+  [25.8, { x: 790, y: 330, s: .9, b: 1.2 }, 'out'],
+  [26.2, { x: 810, y: 425, s: .9, b: 1.1 }, 'in'],
+  [26.9, { x: 935, y: 175, s: .8, b: 1 }, 'back'],
+  [36.2, { x: 935, y: 175, s: .8, b: 1 }],
+  [36.9, { x: 140, y: 150, s: .62, b: 1 }, 'back'],
+  [47.9, { x: 140, y: 150, s: .62, b: 1.1 }],
+  [48.25, { x: 140, y: 150, s: .7, b: 1.6 }, 'out'],
+  [49.2, { x: 860, y: 860, s: .9, b: 1.1 }, 'inOut'],
+  [56.6, { x: 860, y: 880, s: .9, b: 1.1 }],
+  [57.3, { x: 82, y: 330, s: .6, b: 1.1 }, 'back'],
+  [60.0, { x: 82, y: 330, s: .6, b: 1.1 }],
+];
+function lantern(t) {
+  const k = keys(t, LANTERN);
+  const bob = Math.sin(t * 2.1) * 9, sway = Math.sin(t * 1.5) * 4;
+  const flick = 1 + .05 * Math.sin(t * 13.1) + .03 * Math.sin(t * 7.3);
+  const b = k.b * flick;
+  pose('lantern', { x: k.x, y: k.y + bob, s: k.s, rz: sway, f: `brightness(${lerp(.55, 1.15, clamp(b / 1.2))}) saturate(${lerp(.6, 1.1, clamp(b))})` });
+  pose('lanternGlow', { x: k.x, y: k.y + bob + 20, s: k.s * lerp(.55, 1.25, clamp(b / 1.6)), o: clamp(b * .9) });
+}
+
+/* ---------- payment choreography ---------- */
+// layout tuples: [x, y, scale, opacity, rotateY]
+const PL = {
+  hidden: [540, 1250, .4, 0, 0],
+  back: [540, 1000, .5, 0, 0],
+  gone: [140, 150, .05, 0, 0],
+  fan: { sd: [750, 960, .56, 1, -20], eg: [540, 930, .58, 1, 0], it: [330, 960, .56, 1, 20] },
+  sdFront: [540, 960, 1, 1, 0],
+  egDock: [540, 470, .7, 1, 0],
+  egFront: [540, 1000, 1, 1, 0],
+  egBelow: [540, 1320, .9, 0, 0],
+  it: { sd: [540, 395, .58, 1, 0], eg: [540, 715, .58, 1, 0], it: [540, 1120, 1, 1, 0] },
+  itBelow: [540, 1420, .9, 0, 0],
+  all: { sd: [540, 585, .75, 1, 0], eg: [540, 976, .75, 1, 0], it: [540, 1324, .75, 1, 0] },
+  end: { sd: [540, 655, .7, 1, 0], eg: [540, 1018, .7, 1, 0], it: [540, 1341, .7, 1, 0] },
+};
+const rise = v => [v[0], v[1] + 40, v[2], 0, 0];
+const PAYSEQ = {
+  sd: [[0, PL.hidden], [36.3, PL.hidden], [36.8, PL.fan.sd, 'out'], [37.3, PL.fan.sd], [37.8, PL.sdFront, 'out'],
+       [38.9, PL.sdFront], [39.3, PL.egDock, 'out'], [41.3, PL.egDock], [41.7, PL.it.sd, 'out'], [44.45, PL.it.sd],
+       [45.0, PL.all.sd, 'back'], [47.9, PL.all.sd], [48.3, PL.gone, 'in'], [57.1, rise(PL.end.sd)], [57.55, PL.end.sd, 'out'], [60, PL.end.sd]],
+  eg: [[0, PL.hidden], [36.4, PL.hidden], [36.9, PL.fan.eg, 'out'], [37.3, PL.fan.eg], [37.8, PL.back, 'inOut'],
+       [39.15, PL.egBelow], [39.65, PL.egFront, 'out'], [41.3, PL.egFront], [41.7, PL.it.eg, 'out'], [44.45, PL.it.eg],
+       [45.0, PL.all.eg, 'back'], [47.9, PL.all.eg], [48.3, PL.gone, 'in'], [57.25, rise(PL.end.eg)], [57.7, PL.end.eg, 'out'], [60, PL.end.eg]],
+  it: [[0, PL.hidden], [36.5, PL.hidden], [37.0, PL.fan.it, 'out'], [37.3, PL.fan.it], [37.8, PL.back, 'inOut'],
+       [41.55, PL.itBelow], [42.05, PL.it.it, 'out'], [44.45, PL.it.it],
+       [45.0, PL.all.it, 'back'], [47.9, PL.all.it], [48.3, PL.gone, 'in'], [57.4, rise(PL.end.it)], [57.85, PL.end.it, 'out'], [60, PL.end.it]],
+};
+function payPose(t) {
+  for (const card of ['sd', 'eg', 'it']) {
+    const list = PAYSEQ[card].map(([tt, v, ease]) => [tt, { x: v[0], y: v[1], s: v[2], o: v[3], ry: v[4] }, ease]);
+    const k = keys(t, list);
+    pose({ sd: 'paySD', eg: 'payEG', it: 'payINT' }[card], { x: k.x, y: k.y, s: k.s, o: clamp(k.o), ry: k.ry });
+  }
+}
+
+/* ---------- main render ---------- */
+function render(t) {
+  // mood: 0 warm, 1 cool
+  const cool = clamp(E.inOut(prog(t, 9.6, 10.8)) - E.inOut(prog(t, 16.9, 17.6)));
+  const warm = 1 - cool;
+
+  // background
+  const bgS = lerp(1.04, 1.16, t / DURATION);
+  $('bg').style.transform = `scale(${bgS}) translateY(${lerp(0, -40, t / DURATION)}px)`;
+  $('bg').style.filter = `brightness(${lerp(1, .55, cool)}) saturate(${lerp(1.05, .55, cool)}) hue-rotate(${lerp(0, -14, cool)}deg)`;
+  pose('bgWrap', { o: 1 });
+  pose('tint', { o: cool * .9 });
+  const comm = env(t, 48.3, 61, .5, 0);
+  pose('commWrap', { o: comm });
+  $('comm').style.transform = `scale(${lerp(1.06, 1.18, E.inOut(prog(t, 48.3, 60)))})`;
+  const dim = E.inOut(prog(t, 56.6, 57.3));
+  $('comm').style.filter = `brightness(${lerp(1, .5, dim)}) blur(${lerp(0, 6, dim)}px)`;
+  pose('topshade', { o: comm });
+  drawParticles(t, warm);
+
+  // ---- S1: hilu-mur card (0 - 3.8); faint from frame 0 so the first frame has a subject
+  {
+    const pin = prog(t, 0, .9);
+    const flip = E.in(prog(t, 3.5, 3.82));
+    if (t < 3.82) pose('cardA', { x: 540, y: 830 + (1 - E.back(pin)) * 420, rx: (1 - E.out(pin)) * 28, ry: flip * 90, o: lerp(.2, 1, clamp(pin * 2)), s: lerp(.9, 1, E.back(pin)) });
+    else hide('cardA');
+    kb('cardA', t, 0, 3.8, 1.02, 1.12); sheen('cardA', t, 1.1);
+  }
+  // ---- S2: dara card (3.82 - 6.9), gone before the fan opens
+  {
+    const pin = prog(t, 3.82, 4.35);
+    const out = E.inOut(prog(t, 6.5, 6.9));
+    if (t >= 3.82 && t < 6.9) pose('cardB', { x: 540, y: 830 + out * 60, ry: -90 * (1 - E.back(pin)), s: lerp(1, .7, out), o: 1 - out, f: `blur(${out * 8}px)` });
+    else hide('cardB');
+    kb('cardB', t, 3.8, 7, 1.0, 1.14); sheen('cardB', t, 4.5);
+  }
+  // ---- S3: family fan (6.75 - 10.1); tilts away to the sides
+  {
+    const pin = prog(t, 6.75, 7.5);
+    const nudge = Math.sin(Math.PI * prog(t, 8.2, 9.0));
+    const away = E.in(prog(t, 9.6, 10.1));
+    const p = E.back(pin);
+    const f = `brightness(${lerp(1, .55, away)}) saturate(${lerp(1, .5, away)})`;
+    if (t > 6.75 && t < 10.1) {
+      const o = clamp(pin * 3) * (1 - away);
+      pose('fanMen', { x: lerp(540, 300, p) - away * 260, y: 850, rz: lerp(0, -8, p), ry: lerp(0, 14, p) + away * 35, s: lerp(.6, .76, p), z: -60, o, f });
+      pose('fanGran', { x: lerp(540, 780, p) + away * 260, y: 850, rz: lerp(0, 8, p), ry: lerp(0, -14, p) - away * 35, s: lerp(.6, .76, p), z: -60, o, f });
+      pose('fanKids', { x: 540, y: 810 - nudge * 40 + away * 220, rx: away * 40, s: lerp(.6, .86, p) + nudge * .06, z: 40 + nudge * 80, o, f });
+    } else hide('fanMen', 'fanGran', 'fanKids');
+    ['fanMen', 'fanGran', 'fanKids'].forEach(id => kb(id, t, 6.8, 10.1, 1.0, 1.08));
+  }
+  // ---- S4: door (10.1 - 13.95)
+  {
+    const pin = E.out(prog(t, 10.1, 10.9));
+    const out = E.inOut(prog(t, 13.45, 13.85));
+    if (t > 10.1 && t < 13.85) pose('cardDoor', { x: 540, y: 830, s: lerp(.92, 1, pin) + out * .04, o: pin * (1 - out) });
+    else hide('cardDoor');
+    kb('cardDoor', t, 10, 14, 1.12, 1.0);
+  }
+  // ---- S5-S6: sparse tray -> bloom -> full tray (13.95 - 21.8)
+  {
+    const pin = prog(t, 13.75, 14.4);
+    const toFull = E.inOut(prog(t, 17.2, 17.7));
+    const up = E.inOut(prog(t, 18.1, 18.9));
+    const out = E.inOut(prog(t, 21.2, 21.8));
+    const y = lerp(800 + (1 - E.out(pin)) * 60, 1200, up) - out * 80;
+    const s = lerp(1, .74, up) * (1 - out * .2);
+    if (t > 13.75 && t < 17.7) pose('cardSparse', { x: 540, y, s: s * lerp(.92, 1, E.out(pin)), o: E.out(pin) * (1 - toFull) }); else hide('cardSparse');
+    if (t > 17.2 && t < 21.8) pose('cardFull', { x: 540, y, s, o: toFull * (1 - out), f: `brightness(${lerp(1, .9, up)})` }); else hide('cardFull');
+    const bl = Math.sin(Math.PI * prog(t, 17.05, 17.9));
+    if (bl > 0) pose('bloom', { x: 540, y: 800, s: lerp(.6, 1.15, prog(t, 17.05, 17.9)), o: bl * .95 }); else hide('bloom');
+    kb('cardSparse', t, 14, 18, 1.0, 1.06); kb('cardFull', t, 17.2, 21.8, 1.1, 1.0); sheen('cardFull', t, 18.0, 1.2);
+  }
+  // title panel (18.25 - 21.75)
+  {
+    const pin = prog(t, 18.25, 19.05);
+    const out = E.inOut(prog(t, 21.2, 21.75));
+    if (t > 18.25 && t < 21.75) pose('titlePanel', { x: 540, y: lerp(1500, 640, E.back(pin)) - out * 260, rx: (1 - E.out(prog(t, 18.6, 19.3))) * -80, s: lerp(.6, 1, E.back(pin)) * (1 - out * .35), o: clamp(pin * 3) * (1 - out) });
+    else hide('titlePanel');
+    drawSparkles(t, 19.1, 540, 640);
+  }
+  // ---- S7: basket + family + two weeks (21.6 - 25.3); basket stays through the price beat
+  {
+    const pin = prog(t, 21.6, 22.4);
+    const out = E.inOut(prog(t, 24.8, 25.3));
+    const p = E.back(pin);
+    if (t > 21.6 && t < 27.5) {
+      const mv = E.inOut(prog(t, 24.85, 25.4));
+      const bOut = E.inOut(prog(t, 27.1, 27.5));
+      const bounce = Math.sin(Math.PI * prog(t, 26.7, 27.05));
+      const bY = lerp(lerp(1300, 540, p), 1300, mv);
+      const bS = lerp(lerp(.5, .9, p), .58, mv) * (1 + .12 * bounce);
+      pose('basket', { x: 540, y: bY + Math.sin(t * 2) * 6, s: bS, sy: bS * (1 - .08 * bounce), ry: Math.sin(t * 1.3) * 10, o: clamp(pin * 3) * (1 - bOut),
+        f: `drop-shadow(0 24px 30px rgba(0,0,0,.45)) brightness(${1 + .35 * bounce})` });
+      pose('pedestal', { x: 540, y: bY + 250 * bS, s: bS, o: clamp(pin * 3) * (1 - bOut) * .95 });
+    } else hide('basket', 'pedestal');
+    if (t > 22.0 && t < 25.3) {
+      pose('house', { x: 540, y: 1020, o: E.out(prog(t, 22.0, 22.4)) * (1 - out), s: 1 - out * .1 });
+      for (let i = 0; i < 6; i++) {
+        const pp = prog(t, 22.25 + i * .15, 22.25 + i * .15 + .4);
+        const el = $('pp' + i);
+        el.style.opacity = clamp(pp * 3);
+        el.style.transform = `scale(${E.back(pp)})`;
+      }
+      const hl = $('houseLine');
+      hl.style.strokeDasharray = '2000'; hl.style.strokeDashoffset = `${2000 * (1 - E.out(prog(t, 22.0, 22.9)))}`;
+    } else hide('house');
+    if (t > 23.0 && t < 25.3) { pose('weeks', { x: 540, y: 1335, o: E.out(prog(t, 23.0, 23.3)) * (1 - out) }); setWeeks(t, 23.2); }
+    else hide('weeks');
+    caption('cap7', t, 22.0, 24.85, CAP_Y);
+  }
+  // ---- S8: price (24.95 - 26.75), then the card drops into the basket
+  {
+    const pin = prog(t, 24.95, 25.55);
+    const sh = E.in(prog(t, 26.35, 26.75));
+    if (t > 24.95 && t < 26.75) {
+      pose('priceCard', { x: 540, y: lerp(820, 1215, sh), z: lerp(-500, 0, E.back(pin)), s: lerp(1, .1, sh), o: clamp(pin * 3) * (1 - clamp((sh - .7) / .3)) });
+      $('fifty').style.transform = `scale(${1 + .12 * Math.sin(Math.PI * prog(t, 25.3, 25.7))})`;
+    } else hide('priceCard');
+  }
+  // ---- S9: hands carrying tray (27.15 - 32.4)
+  {
+    const pin = prog(t, 27.15, 27.95);
+    const out = E.inOut(prog(t, 31.8, 32.4));
+    if (t > 27.15 && t < 32.4) pose('cardHands', { x: lerp(540, 300, out), y: 830, ry: lerp(-35, 0, E.out(pin)) + out * 50, s: lerp(.85, 1, E.back(pin)) * (1 - out * .2), o: clamp(pin * 3) * (1 - out) });
+    else hide('cardHands');
+    kb('cardHands', t, 27.2, 32.4, 1.0, 1.12); sheen('cardHands', t, 28.3);
+    const mb = prog(t, 29.75, 30.35);
+    if (t > 29.75 && t < 32.4) pose('miniBasket', { x: lerp(540, 300, out), y: 1240 - E.back(mb) * 40, s: E.back(mb), o: clamp(mb * 3) * (1 - out), f: 'drop-shadow(0 18px 24px rgba(0,0,0,.5))' });
+    else hide('miniBasket');
+    caption('cap9a', t, 27.5, 29.7, CAP_Y);
+    caption('cap9b', t, 29.7, 32.3, CAP_Y);
+  }
+  // ---- S10: nafeer (32.0 - 36.3)
+  {
+    const pin = prog(t, 32.0, 32.8);
+    const out = E.inOut(prog(t, 35.8, 36.3));
+    if (t > 32.0 && t < 36.3) pose('cardNafeer', { x: lerp(780, 540, E.out(pin)), y: 830 - out * 80, ry: lerp(40, 0, E.out(pin)), s: lerp(.85, 1, E.back(pin)) * (1 - out * .4), o: clamp(pin * 3) * (1 - out) });
+    else hide('cardNafeer');
+    kb('cardNafeer', t, 32, 36.3, 1.0, 1.1); sheen('cardNafeer', t, 33.0);
+    const c1 = prog(t, 33.2, 33.8), c2 = prog(t, 33.55, 34.15);
+    if (t > 33.2 && t < 36.3) {
+      pose('chipAhl', { x: lerp(-200, 300, E.back(c1)), y: 1240, rz: -6, o: clamp(c1 * 3) * (1 - out) });
+      pose('chipHub', { x: lerp(1280, 780, E.back(c2)), y: 1150, rz: 6, o: clamp(c2 * 3) * (1 - out) });
+    } else hide('chipAhl', 'chipHub');
+    caption('cap10', t, 32.4, 36.15, CAP_Y);
+  }
+  // ---- S11-S16 payments
+  payPose(t);
+  {
+    const wa = env(t, 45.1, 48.2, .6, .3);
+    const waEnd = env(t, 57.6, 61, .5, 0);
+    if (wa > 0) pose('waChip', { x: 540, y: 1581 + (1 - E.back(prog(t, 45.1, 45.7))) * 60, o: wa, s: .9 * lerp(.85, 1, E.back(prog(t, 45.1, 45.7))) });
+    else if (waEnd > 0) pose('waChip', { x: 540, y: 1587 + (1 - E.out(prog(t, 57.6, 58.1))) * 40, o: waEnd, s: .9 });
+    else hide('waChip');
+    const sc = env(t, 44.6, 48.2, .5, .3);
+    if (sc > 0) pose('shotChip', { x: 540, y: 271 - (1 - E.back(prog(t, 44.6, 45.1))) * 60, o: sc, s: .9 });
+    else hide('shotChip');
+    const fl = t > 44.62 && t < 45.0 ? (1 - prog(t, 44.62, 45.0)) * .55 : 0;
+    pose('flash', { o: fl });
+  }
+  // ---- S15 proverb (48.9 - 56.8)
+  {
+    const out = E.inOut(prog(t, 56.3, 56.8));
+    const p1 = prog(t, 48.9, 50.0), p2 = prog(t, 51.6, 52.7), p3 = prog(t, 53.2, 54.4);
+    if (t > 48.9 && t < 56.8) pose('prov1', { x: 540, y: 330 - (1 - E.out(p1)) * 30, o: clamp(p1 * 2) * (1 - out), clip: wipe(p1) }); else hide('prov1');
+    if (t > 51.6 && t < 56.8) pose('prov2', { x: 540, y: 470, s: lerp(.85, 1, E.back(p2)), o: clamp(p2 * 2) * (1 - out), clip: wipe(p2) }); else hide('prov2');
+    if (t > 53.2 && t < 56.8) pose('prov3', { x: 540, y: 600, o: clamp(p3 * 2) * (1 - out), clip: wipe(p3) }); else hide('prov3');
+  }
+  // ---- S16 end card: title first, then cards, then WhatsApp
+  {
+    const p = prog(t, 56.9, 57.4);
+    if (t > 56.9) pose('endTitle', { x: 540, y: 320, s: lerp(.8, 1, E.back(p)), o: clamp(p * 2) }); else hide('endTitle');
+  }
+
+  // ---- captions S1-S5
+  caption('cap1', t, .5, 3.45);
+  caption('cap2', t, 4.0, 6.5);
+  caption('cap3', t, 7.2, 9.6);
+  caption('cap4', t, 10.5, 13.45);
+  caption('cap5', t, 14.1, 17.1);
+
+  lantern(t);
+  pose('frame', { x: 540, y: 960, o: lerp(.85, .5, cool) + .3 * Math.sin(Math.PI * prog(t, 17.1, 18.2)) });
+  pose('vignette', { o: 1 });
+}
+
+/* ---------- boot ---------- */
+async function boot() {
+  buildFrame(); buildHouse(); buildWeeks();
+  await document.fonts.load("80px Lalezar", "مبادرة حقيبة رمضان 50");
+  await document.fonts.load("800 50px Tajawal", "بالجنيه السوداني");
+  await document.fonts.load("700 50px Tajawal", "وثام محمد هاشم");
+  await document.fonts.load("700 50px 'JetBrains Mono'", "0123456789+EG");
+  await document.fonts.ready;
+  await Promise.all([...document.images].map(img => img.decode().catch(() => console.warn('img failed', img.src))));
+  // hide everything once so measurement happens with layout intact
+  document.querySelectorAll('#stage > .abs').forEach(el => measure(el));
+  render(0);
+}
+window.render = render;
+window.ready = boot();
+</script>
+</body>
+</html>
